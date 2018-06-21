@@ -123,13 +123,13 @@ router.post('/login', [check('email').isEmail()], (req, res) => {
           }, process.env.SECRET_TOKEN, {
               expiresIn: "1h"
           }
-                 
+          
         )
           //////////////////////////
-          res.json({
-            'token ' :token
-          })
-          
+        res.header("Access-Control-Expose-Headers", "x-access-token")
+        res.set("x-access-token", token)
+        res.status(200).send({
+          details: "user connected"})
         }
       })
     }

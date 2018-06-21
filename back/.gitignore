@@ -2,6 +2,10 @@
 
 # dependencies
 /node_modules/
-package.json
-package-lock.json
-DS_Store
+.package.json
+.package-lock.json
+.DS_Store
+.env
+.token.json
+foo
+token.json
