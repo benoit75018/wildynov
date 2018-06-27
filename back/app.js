@@ -3,8 +3,8 @@ const bodyParser = require ('body-parser');
 const mysql = require ('mysql');
 const app = express();
 const profilRouter = require('./routes/authcontrol/auth.js');
-const projetsRouter = require('./routes/allprojets/projets.js');
-const addProjetsRouter = require('./routes/allprojets/addProjets.js');
+const inProjetRouter = require('./routes/allProjets/projet.js');
+const seeProjetRouter = require('./routes/allProjets/projets.js');
 const connection = require('./helpers/connect.js');
 const cors = require('cors');
 const morgan = require('morgan');
@@ -20,9 +20,8 @@ app.use(cors())
 
 ////////////ROUTING////////////////////////
 app.use('/auth', profilRouter)
-app.use('/allprojets', projetsRouter)
-app.use('/allprojets', addProjetsRouter)
-
+app.use('/projet', inProjetRouter)
+app.use('/projets', seeProjetRouter)
 
 ////////////Routes//////////////////////
 

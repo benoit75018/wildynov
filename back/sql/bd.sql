@@ -24,12 +24,11 @@ CREATE TABLE profile(
 
 
 CREATE TABLE project(
-        id_profile           Int NOT NULL ,
-        id                   Int NOT NULL ,
+        id_profile           Int NULL,
+        id                   Int NULL ,
         title                Varchar (255) ,
         deadline_project     TIMESTAMP DEFAULT CURRENT_TIMESTAMP ,
-        deadline_application 
-        TIMESTAMP DEFAULT CURRENT_TIMESTAMP ,
+        deadline_application TIMESTAMP DEFAULT CURRENT_TIMESTAMP ,
         description          Varchar (255) ,
         state                Bool ,
         created_at           TIMESTAMP DEFAULT CURRENT_TIMESTAMP ,
