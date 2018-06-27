@@ -40,14 +40,14 @@ router.post('/signup', [ check('email').isEmail() ], (req, res) => {
 						port: 465,
 						secure: false, // true for 465, false for other ports
 						auth: {
-							user: 'wildtest75@hotmail.com', // generated ethereal user
-							pass: 'wildcodeschool2018' // generated ethereal password
+							user: 'mr.souid@live.fr', // generated ethereal user
+							pass: 'ad&gjk456' // generated ethereal password
 						}
 					})
 
 					// setup email data with unicode symbols
 					let mailOptions = {
-						from: '"Fred Foo 👻" <wildtest75@hotmail.com>', // sender address
+						from: '"Fred Foo 👻" <mr.souid@live.fr>', // sender address
 						to: emailing, // list of receivers
 						subject: 'Hello ✔', // Subject line
 						text: 'Hello world?', // plain text body

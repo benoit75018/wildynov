@@ -1,30 +1,30 @@
 {
-  "name": "ingesup",
-  "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "bcrypt": "^2.0.1",
-    "body-parser": "^1.18.3",
-    "cors": "^2.8.4",
-    "dotenv": "^6.0.0",
-    "express": "^4.16.3",
-    "express-jwt": "^5.3.1",
-    "express-validator": "^5.2.0",
-    "jsonwebtoken": "^8.3.0",
-    "morgan": "^1.9.0",
-    "mysql": "^2.15.0",
-    "node-mailer": "^0.1.1",
-    "nodemailer": "^4.6.6",
-    "nodemon": "^1.17.5"
-  },
-  "devDependencies": {
-    "eslint": "^4.19.1"
-  }
+	"name": "ingesup",
+	"version": "1.0.0",
+	"description": "",
+	"main": "app.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "nodemon app.js"
+	},
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"bcrypt": "^2.0.1",
+		"body-parser": "^1.18.3",
+		"cors": "^2.8.4",
+		"dotenv": "^6.0.0",
+		"express": "^4.16.3",
+		"express-jwt": "^5.3.1",
+		"express-validator": "^5.2.0",
+		"jsonwebtoken": "^8.3.0",
+		"morgan": "^1.9.0",
+		"mysql": "^2.15.0",
+		"node-mailer": "^0.1.1",
+		"nodemailer": "^4.6.7",
+		"nodemon": "^1.17.5"
+	},
+	"devDependencies": {
+		"eslint": "^4.19.1"
+	}
 }
