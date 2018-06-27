@@ -1,3 +1,4 @@
+
 const express = require('express')
 const bodyParser = require('body-parser')
 const mysql = require('mysql')
@@ -25,10 +26,11 @@ app.use(validator())
 ////////////ROUTING////////////////////////
 
 app.use('/auth', profilRouter)
+app.use('/projet', inProjetRouter)
+app.use('/projets', seeProjetRouter)
 app.use('/user', userRouter)
-app.use('/allprojets', projetsRouter)
-app.use('/allprojets', addProjetsRouter)
 app.use('/authadmin', adminRouter)
+
 
 ////////////Routes//////////////////////
 
