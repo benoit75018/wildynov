@@ -1,0 +1,62 @@
+
+  .container{
+    display: -webkit-inline-box;
+    
+
+  }
+  .add{
+    text-align:right;
+  }
+  .container2{
+    display: -webkit-inline-box;
+    
+  }
+.composant{
+  border: 1px solid black;
+}
+.titre{
+  border: 1px solid black;
+}
+
+  nav{
+    border: 1px solid black;
+    padding: 30px;
+  }
+  .nav-wrapper{
+    padding:0;
+  }
+  .register{
+    padding: 110px;
+  }
+
+  h1{
+  text-align: center;
+  }
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+    height: 80px;
+  }
+  dMuiThemeProvide{
+    text-align: center;
+  padding: 180px;
+  }
+  .App-header {
+    background-color: #222;
+    height: 150px;
+    padding: 20px;
+    color: white;
+  }
+  
+  .App-title {
+    font-size: 1.5em;
+  }
+  
+  .App-intro {
+    font-size: large;
+  }
+  
+  @keyframes App-logo-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  
