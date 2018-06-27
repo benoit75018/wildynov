@@ -12,7 +12,12 @@ const cors = require('cors')
 const morgan = require('morgan')
 const nodemailer = require('nodemailer')
 const validator = require('express-validator')
+const expressJWT = require('express-jwt')
+
+
 const adminRouter = require('./routes/authcontrol/authAdmin.js')
+const adminMember = require('./routes/admin/routes/membres.js')
+const adminProject = require('./routes/admin/routes/projets.js')
 
 /////////// Middleware/////////////////////
 
@@ -21,6 +26,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.use(cors())
 app.use(validator())
+app.use(expressJWT({ secret: process.env.SECRET_TOKEN }).unless({ path: [ '/auth/signup' ] })) //protect routes
 
 
 ////////////ROUTING////////////////////////
@@ -30,6 +36,8 @@ app.use('/projet', inProjetRouter)
 app.use('/projets', seeProjetRouter)
 app.use('/user', userRouter)
 app.use('/authadmin', adminRouter)
+app.use('/membersAdmin', adminMember)
+app.use('/membersProjects', adminProject)
 
 
 ////////////Routes//////////////////////
