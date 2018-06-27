@@ -9,7 +9,6 @@ const secret = require('dotenv').config()
 
 
 
-
 router.post('/signup', [check('email').isEmail()], (req, res) => {
 
     const emailing = req.body.email
@@ -145,4 +144,5 @@ router.post('/login', [check('email').isEmail()], (req, res) => {
 
 
 module.exports = router;
+
 

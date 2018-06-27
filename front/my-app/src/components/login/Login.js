@@ -32,7 +32,7 @@ export const Home = () => (
 		<div className="input">
 			<MuiThemeProvider>
 				<TextField
-					hintText="@enov"
+					hintText="@ynov"
 					floatingLabelText="Email"
 					LabelText="Email"
 					variant="raised"
@@ -66,7 +66,6 @@ export const Signin = () => (
 		))}
 	</div>
 )
-
 ;({ match }) => {
 	const route = routes[parseInt(match.params.id, 10)]
 
