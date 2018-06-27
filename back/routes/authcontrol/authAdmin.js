@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const express = require('express');
 const router = express.Router();
 const connection = require('../../helpers/connect.js');
@@ -54,3 +55,16 @@ router.post('/admin',[check('email').isEmail()], (req, res) => {
   
   
   module.exports = router;
+=======
+const express = require('express')
+const router = express.Router()
+const connection = require('../../helpers/connect.js')
+const nodemailer = require('nodemailer')
+const { check, validationResult } = require('express-validator/check')
+const bcrypt = require('bcrypt')
+const jwt = require('jsonwebtoken')
+
+
+
+module.exports = router
+>>>>>>> 66a4d17a8b1306d79c97725ea1c08f0cf8e56f0a

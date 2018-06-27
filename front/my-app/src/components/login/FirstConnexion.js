@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from 'react'
 import RaisedButton from 'material-ui/RaisedButton'
 import TextField from 'material-ui/TextField'
@@ -66,3 +67,36 @@ const style = {
 	margin: 15
 }
 export default Signup
+=======
+import React, { Component } from 'react'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import RaisedButton from 'material-ui/RaisedButton'
+import TextField from 'material-ui/TextField'
+import Logo from '../logo/Logo'
+
+class FirstConnexion extends Component {
+	constructor(props) {
+		super(props)
+		this.state = {
+			email: ''
+		}
+	}
+	render() {
+		return (
+			<div>
+				<Logo />
+				<div class="register">
+					<MuiThemeProvider>
+						<TextField hintText="@enov" type="email" floatingLabelText="Email" />
+
+						<br />
+						<RaisedButton label="Send" primary={true} />
+					</MuiThemeProvider>
+				</div>
+			</div>
+		)
+	}
+}
+
+export default FirstConnexion
+>>>>>>> 66a4d17a8b1306d79c97725ea1c08f0cf8e56f0a

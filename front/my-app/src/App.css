@@ -1,39 +1,43 @@
 .App {
-  text-align: center;
+	text-align: center;
 }
 .MuiButton-containedPrimary-11 {
-  color: #fff;
-  background-color: #b53f59;
+	color: #fff;
+	background-color: #b53f59;
 }
-.nav{
-
-text-align: right;
-flex: right;
+.nav {
+	text-align: right;
+	flex: right;
 }
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+	animation: App-logo-spin infinite 20s linear;
+	height: 80px;
 }
 .but {
-  color: rgba(0, 0, 0, 0.26);
-  top:20%; bottom:80%
+	color: rgba(0, 0, 0, 0.26);
+	top: 20%;
+	bottom: 80%;
 }
 .App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+	background-color: #222;
+	height: 150px;
+	padding: 20px;
+	color: white;
 }
 
 .App-title {
-  font-size: 1.5em;
+	font-size: 1.5em;
 }
 
 .App-intro {
-  font-size: large;
+	font-size: large;
 }
 
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
 }

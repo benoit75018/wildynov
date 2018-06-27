@@ -8,8 +8,12 @@ import Button from '@material-ui/core/Button'
 import IconButton from '@material-ui/core/IconButton'
 import AccountCircle from '@material-ui/icons/AccountCircle'
 import Menu from '@material-ui/core/Menu'
+<<<<<<< HEAD
 import MenuItem from '@material-ui/core/MenuItem'
 import { Link } from '@reach/router'
+=======
+import RaisedButton from 'material-ui/RaisedButton'
+>>>>>>> 66a4d17a8b1306d79c97725ea1c08f0cf8e56f0a
 
 const styles = {
 	root: {
@@ -48,11 +52,19 @@ class MenuAppBar extends React.Component {
 
 		return (
 			<div className={classes.root}>
+<<<<<<< HEAD
 				<AppBar position="static" style={{ backgroundColor: '#36B1A0' }}>
 					<Toolbar>
 						<Typography variant="title" color="inherit" className={classes.flex} />
 
 						<Button color="inherit" href="/projet">
+=======
+				<AppBar position="static">
+					<Toolbar>
+						<Typography variant="title" color="inherit" className={classes.flex} />
+
+						<Button color="inherit" linkButton={true} href="/projet">
+>>>>>>> 66a4d17a8b1306d79c97725ea1c08f0cf8e56f0a
 							Projet
 						</Button>
 
@@ -81,10 +93,21 @@ class MenuAppBar extends React.Component {
 									open={open}
 									onClose={this.handleClose}
 								>
+<<<<<<< HEAD
 									<Link to="/profil">
 										<MenuItem onClick={this.handleClose}>Profile</MenuItem>
 									</Link>
 									<MenuItem onClick={this.handleClose}>My account</MenuItem>
+=======
+									{/*acces the route by linkbutton imported */}
+									<li className="button">
+										<RaisedButton label="Profil" linkButton={true} href="/profil" />
+									</li>
+									<li>
+										{' '}
+										<RaisedButton label="Deconnexion" checked={auth} />
+									</li>
+>>>>>>> 66a4d17a8b1306d79c97725ea1c08f0cf8e56f0a
 								</Menu>
 							</div>
 						)}

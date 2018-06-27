@@ -1,4 +1,5 @@
 div {
+<<<<<<< HEAD:front/my-app/src/components/login/logincss.css
   text-align: center;
 }
 
@@ -12,33 +13,56 @@ div {
 
 h1 {
   text-align: center;
+=======
+	text-align: center;
+}
+.input {
+	padding: 5%;
+}
+.nav-wrapper {
+	padding: 0;
+}
+.register {
+	padding: 110px;
+}
+
+h1 {
+	text-align: center;
+>>>>>>> 66a4d17a8b1306d79c97725ea1c08f0cf8e56f0a:front/my-app/src/components/login/Login.css
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+	animation: App-logo-spin infinite 20s linear;
+	height: 80px;
 }
+<<<<<<< HEAD:front/my-app/src/components/login/logincss.css
 
 dMuiThemeProvide {
   text-align: center;
   padding: 180px;
+=======
+dMuiThemeProvide {
+	text-align: center;
+	padding: 180px;
+>>>>>>> 66a4d17a8b1306d79c97725ea1c08f0cf8e56f0a:front/my-app/src/components/login/Login.css
 }
 
 .App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+	background-color: #222;
+	height: 150px;
+	padding: 20px;
+	color: white;
 }
 
 .App-title {
-  font-size: 1.5em;
+	font-size: 1.5em;
 }
 
 .App-intro {
-  font-size: large;
+	font-size: large;
 }
 @keyframes App-logo-spin {
+<<<<<<< HEAD:front/my-app/src/components/login/logincss.css
   from {
     transform: rotate(0deg);
   }
@@ -46,4 +70,12 @@ dMuiThemeProvide {
   to {
     transform: rotate(360deg);
   }
+=======
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+>>>>>>> 66a4d17a8b1306d79c97725ea1c08f0cf8e56f0a:front/my-app/src/components/login/Login.css
 }
