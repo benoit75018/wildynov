@@ -12,36 +12,39 @@ const nodemailer = require('nodemailer');
 
 
 
+
 /////////// Middleware/////////////////////
-app.use(morgan('dev'));
+
+app.use(morgan('dev'))
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.use(cors())
+app.use(validator())
+app.use(expressJWT({ secret: process.env.SECRET_TOKEN }).unless({ path: [ '/auth/signup' ] })) //protect routes
+
 
 ////////////ROUTING////////////////////////
+
 app.use('/auth', profilRouter)
 app.use('/projet', inProjetRouter)
 app.use('/projets', seeProjetRouter)
 
+
 ////////////Routes//////////////////////
 
 app.get('/', (req, res) => {
- res.send('Projet ynov');
+	res.send('Projet ynov')
 })
-
-   
 
 //////////CONNECT MYSQL//////////////
-connection.connect( (error)=>{
-    if(error){
-        console.log(error)
-    }else{
-        console.log('Base de données connecté')
-    }
+connection.connect((error) => {
+	if (error) {
+		console.log(error)
+	} else {
+		console.log('Base de données connecté')
+	}
 })
-
 
 ////////////////Port server//////////////////////
 
 app.listen(8080, console.log('Je suis connecté sur le port 8080'))
-

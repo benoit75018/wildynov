@@ -1,23 +1,38 @@
-import React, { Component } from 'react';
-import Login from './components/login/Login';
-import './App.css';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import Logo from './components/Logo'
+import React, { Component } from 'react'
+import './App.css'
+
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import { Home, Signin } from './components/login/Login'
+import { initial } from './Home'
+import { Projets } from './components/projet/Projet'
+import { ProfilForm } from './components/profil/Profil'
+import LoginAdmin from './components/loginAdmin/LoginAdmin'
 
 class App extends Component {
-  render() {
-    return (
-      <div>
-{/*         
-          <h1>Projet Ynov</h1> */}
+	constructor(props) {
+		super(props)
+		this.state = {}
+	}
 
-          <MuiThemeProvider>
-          <Logo />
-         < Login />    
-         </MuiThemeProvider> 
-      </div>
-    );
-  }
+	render() {
+		return (
+			/*CALL ROUTES*/
+			<div className="App">
+				<BrowserRouter>
+					<div>
+						<Switch>
+							<Route exact path="/Login" component={Home} />
+							<Route path="/Login/1" component={Signin} />
+							<Route exact path="/home" component={initial} />
+							<Route exact path="/projet" component={Projets} />
+							<Route exact path="/profil" component={ProfilForm} />
+							<Route exact path="/LoginAdmin" component={LoginAdmin} />
+						</Switch>
+					</div>
+				</BrowserRouter>
+			</div>
+		)
+	}
 }
 
-export default App;
+export default App
