@@ -58,7 +58,7 @@ export const ProfilForm = () => (
 				<br />
 				<SelectsPromo />
 				<br />
-				<SelectSkills />
+				<TextField hintText="Compétences" floatingLabelText="Compétences" />
 				<br />
 				<Button variant="raised" color="primary" style={style}>
 					Modifier
