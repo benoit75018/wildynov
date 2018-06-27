@@ -45,12 +45,9 @@ class SelectsCampus extends React.Component {
 							input={<Input name="campus" id="campus-native-helper" />}
 						>
 							<option value="" />
-							<option value={10}>Aix-en-Provence</option>
-							<option value={20}>Bordeaux</option>
-							<option value={30}>Lyon</option>
-							<option value={40}>Nantes</option>
-							<option value={50}>Paris</option>
-							<option value={60}>Toulouse</option>
+							<option value={10}>Ingésup</option>
+							<option value={20}>Ecole Design</option>
+							<option value={30}>Ecole de Commerce</option>
 						</NativeSelect>
 					</FormControl>
 				</MuiThemeProvider>

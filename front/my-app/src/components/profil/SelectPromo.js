@@ -46,12 +46,11 @@ class SelectsPromo extends React.Component {
 							input={<Input name="promo" id="promo-native-helper" />}
 						>
 							<option value="" />
-							<option value={10}>Aix-en-Provence</option>
-							<option value={20}>Bordeaux</option>
-							<option value={30}>Lyon</option>
-							<option value={30}>Nantes</option>
-							<option value={30}>Paris</option>
-							<option value={30}>Toulouse</option>
+							<option value={10}>1ere Année</option>
+							<option value={20}>2eme Année</option>
+							<option value={30}>3e Année </option>
+							<option value={30}>4e Année</option>
+							<option value={30}>5e Année</option>
 						</NativeSelect>
 					</FormControl>
 				</MuiThemeProvider>

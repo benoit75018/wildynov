@@ -27,6 +27,7 @@ class ResponsiveDialog extends React.Component {
 
 		return (
 			/*PROJECTFORM*/
+<<<<<<< HEAD
 			<div className="size">
 				<div>
 					<RaisedButton onClick={this.handleClickOpen} label="ajouter un projet" primary={true} />
@@ -34,11 +35,19 @@ class ResponsiveDialog extends React.Component {
 					<Dialog
 						style={{ Color: '#00BCD4' }}
 						className="container"
+=======
+			<div>
+				<div className="size">
+					<RaisedButton onClick={this.handleClickOpen} label="ajouter un projet" primary={true} />
+
+					<Dialog
+>>>>>>> c4f398afedc062b72cfcd5eed6a6c82bf28414b0
 						fullScreen={fullScreen}
 						open={this.state.open}
 						onClose={this.handleClose}
 						aria-labelledby="responsive-dialog-title"
 					>
+<<<<<<< HEAD
 						<DialogTitle className="title" id="responsive-dialog-title">
 							{'Nouveau Projet'}
 						</DialogTitle>
@@ -47,6 +56,12 @@ class ResponsiveDialog extends React.Component {
 							<TextField
 								style={{ Color: '#00BCD4' }}
 								className="input"
+=======
+						<DialogTitle id="responsive-dialog-title">{'Nouveau Projet'}</DialogTitle>
+
+						<form className="form">
+							<TextField
+>>>>>>> c4f398afedc062b72cfcd5eed6a6c82bf28414b0
 								id="date"
 								name="deadline_application"
 								label="candidature"
@@ -58,7 +73,10 @@ class ResponsiveDialog extends React.Component {
 							/>
 							<br />
 							<TextField
+<<<<<<< HEAD
 								className="input"
+=======
+>>>>>>> c4f398afedc062b72cfcd5eed6a6c82bf28414b0
 								id="date"
 								name="deadline_project"
 								label="fin du projet "
@@ -71,8 +89,11 @@ class ResponsiveDialog extends React.Component {
 							<br />
 							<div>
 								<TextField
+<<<<<<< HEAD
 									style={{ Color: '#00BCD4' }}
 									className="input"
+=======
+>>>>>>> c4f398afedc062b72cfcd5eed6a6c82bf28414b0
 									required
 									id="required"
 									multiline
@@ -87,12 +108,19 @@ class ResponsiveDialog extends React.Component {
 
 							<div>
 								<TextField
+<<<<<<< HEAD
 									style={{ labelColor: '#00BCD4' }}
 									className="input"
 									required
 									id="required"
 									multiline
 									rowsMax="180"
+=======
+									required
+									id="required"
+									multiline
+									rowsMax="20"
+>>>>>>> c4f398afedc062b72cfcd5eed6a6c82bf28414b0
 									value={this.state.description}
 									label="description du projet"
 									defaultValue=""
@@ -103,12 +131,19 @@ class ResponsiveDialog extends React.Component {
 
 							<div>
 								<TextField
+<<<<<<< HEAD
 									className="input"
+=======
+>>>>>>> c4f398afedc062b72cfcd5eed6a6c82bf28414b0
 									required
 									id="required"
 									value={this.state.tag}
 									label="mots clés"
+<<<<<<< HEAD
 									defaultValue="mots clés"
+=======
+									defaultValue=""
+>>>>>>> c4f398afedc062b72cfcd5eed6a6c82bf28414b0
 									name="tag"
 									margin="normal"
 								/>
@@ -116,7 +151,11 @@ class ResponsiveDialog extends React.Component {
 							<br />
 						</form>
 
+<<<<<<< HEAD
 						<DialogActions className="button">
+=======
+						<DialogActions>
+>>>>>>> c4f398afedc062b72cfcd5eed6a6c82bf28414b0
 							<Button onClick={this.handleClose} color="primary">
 								Valider
 							</Button>

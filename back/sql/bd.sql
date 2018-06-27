@@ -5,22 +5,17 @@ IF NOT EXISTS 'server'@'localhost';
 
 GRANT ALL PRIVILEGES ON projectynov.* To 'server'@'localhost' IDENTIFIED BY 'mysql';
 USE projectynov;
-CREATE TABLE profile
-(
-        id Int
-        Auto_increment  NOT NULL,
-        name       Varchar
-        (255) ,
-        first_name Varchar
-        (255)  ,
-        year       Date,
-        campus     Varchar
-        (255) ,
-        password   Varchar
-        (255) ,
-        email      Varchar
-        (255) UNIQUE ,
-        skill      Integer,
+
+
+CREATE TABLE profile(
+        id         Int  Auto_increment  NOT NULL,
+        name       Varchar (255) ,
+        first_name Varchar (255)  ,
+        year       Varchar (255) ,
+        campus     Varchar (255) ,
+        password   Varchar (255) ,
+        email      Varchar (255) UNIQUE ,
+        skill      Varchar (255) UNIQUE ,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ,
         updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ,
 	      PRIMARY KEY
@@ -35,16 +30,16 @@ CREATE TABLE project(
         deadline_project     TIMESTAMP DEFAULT CURRENT_TIMESTAMP ,
         deadline_application TIMESTAMP DEFAULT CURRENT_TIMESTAMP ,
         description          Varchar (255) ,
-        state                Bool ,
+        state                True ,
         created_at           TIMESTAMP DEFAULT CURRENT_TIMESTAMP ,
         updated              TIMESTAMP DEFAULT CURRENT_TIMESTAMP ,
         name                 Varchar (255) ,
         first_name           Varchar (255) ,
-        year                 Date ,
+        year                 Varchar (255) ,
         campus               Varchar (255) ,
         password             Varchar (255) ,
         email                Varchar (255) UNIQUE,
-        skill                Integer ,
+        skill                Varchar (255) ,
         created_at_profile   TIMESTAMP DEFAULT CURRENT_TIMESTAMP ,
         updated_at           TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 	      ,PRIMARY KEY (id_profile,id)
