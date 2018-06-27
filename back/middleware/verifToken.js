@@ -1,18 +1,25 @@
+const jwt = require('jsonwebtoken')
+
 const verifyToken = (req, res, next) => {
 	// Get auth header value
-	const bearerHeader = req.headers['authorization']
+	const token = req.headers['x-access-token']
 	// Check if bearer is undefined
-	if (typeof bearerHeader !== 'undefined') {
-		//Split at the space
-		const bearer = bearerHeader.split(' ')
-		//Get token from array
-		const bearerToken = bearer[1]
-		//Set the token
-		req.token = bearerToken
+	if (token) {
+    jwt.verify(token, process.env.SECRET_TOKEN, (err, decoded) => {
+      if (err) {
+        console.log(err)
+        res.sendStatus(403)
+      } else {
+        req.token = decoded
+        console.log({ decoded })
+        next()
+      }
+    })
 		//Next middleware
-		next()
 	} else {
 		//Forbidden
 		res.sendStatus(403)
 	}
 }
+
+module.exports = verifyToken

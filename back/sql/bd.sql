@@ -1,12 +1,11 @@
 DROP DATABASE IF EXISTS projectynov;
 CREATE DATABASE projectynov;
-CREATE USER IF NOT EXISTS 'server'@'localhost';
+CREATE USER
+IF NOT EXISTS 'server'@'localhost';
 
 GRANT ALL PRIVILEGES ON projectynov.* To 'server'@'localhost' IDENTIFIED BY 'mysql';
-
- 
-
 USE projectynov;
+
 
 CREATE TABLE profile(
         id         Int  Auto_increment  NOT NULL,
@@ -19,13 +18,14 @@ CREATE TABLE profile(
         skill      Varchar (255) UNIQUE ,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ,
         updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ,
-	PRIMARY KEY (id)
+	      PRIMARY KEY
+        (id)
 )ENGINE=InnoDB;
 
 
 CREATE TABLE project(
-        id_profile           Int NOT NULL ,
-        id                   Int NOT NULL ,
+        id_profile           Int NULL,
+        id                   Int NULL ,
         title                Varchar (255) ,
         deadline_project     TIMESTAMP DEFAULT CURRENT_TIMESTAMP ,
         deadline_application TIMESTAMP DEFAULT CURRENT_TIMESTAMP ,
@@ -35,13 +35,14 @@ CREATE TABLE project(
         updated              TIMESTAMP DEFAULT CURRENT_TIMESTAMP ,
         name                 Varchar (255) ,
         first_name           Varchar (255) ,
-        year                 Date ,
+        year                 Varchar (255) ,
         campus               Varchar (255) ,
         password             Varchar (255) ,
         email                Varchar (255) UNIQUE,
-        skill                Integer ,
+        skill                Varchar (255) ,
         created_at_profile   TIMESTAMP DEFAULT CURRENT_TIMESTAMP ,
         updated_at           TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-	,PRIMARY KEY (id_profile,id)
-	,FOREIGN KEY (id_profile) REFERENCES profile(id)
+	      ,PRIMARY KEY (id_profile,id)
+	      ,FOREIGN KEY (id_profile) REFERENCES profile(id)
 )ENGINE=InnoDB;
+

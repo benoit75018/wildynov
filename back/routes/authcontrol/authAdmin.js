@@ -6,4 +6,5 @@ const { check, validationResult } = require('express-validator/check')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 
+
 module.exports = router
