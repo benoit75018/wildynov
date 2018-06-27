@@ -55,11 +55,14 @@ class Signup extends React.Component {
 						variant="raised"
 						color="primary"
 					/>
-
-					<RaisedButton type="submit">Send</RaisedButton>
+					<br />
+					<RaisedButton type="submit" label="Connexion" primary={true} style={style} />
 				</form>
 			</div>
 		)
 	}
+}
+const style = {
+	margin: 15
 }
 export default Signup

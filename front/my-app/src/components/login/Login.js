@@ -62,7 +62,7 @@ class Login extends React.Component {
 						hintText="Enter your Password"
 						floatingLabelText="Password"
 					/>
-
+					<br />
 					<RaisedButton type="submit" label="Connexion" primary={true} style={style} />
 					<Link to="/signup">
 						<RaisedButton label="Première connexion" primary={true} to="/signup" />
