@@ -1,18 +1,15 @@
 import React, { Component } from 'react'
 
-// Importations de Material-ui
 import { MuiThemeProvider, createMuiTheme, withStyles } from '@material-ui/core/styles'
-import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'
 import TextField from '@material-ui/core/TextField'
 import Grid from '@material-ui/core/Grid'
 import PropTypes from 'prop-types'
 import axios from 'axios'
-// Importations fichiers
 import Block from './Block'
-import './Projets.css'
-// import Demo from '../Demo';
+import '../projet/modalprovisoire.css'
 
+// import ResponsiveDialog from '../projet/modalform'
 const theme = createMuiTheme({
 	palette: {
 		primary: {
@@ -35,7 +32,6 @@ class Projets extends Component {
 	}
 
 	componentDidMount() {
-		// console.log('--++++--eqrerzerzerz')
 		axios
 			.get('http://localhost:8080/allprojets/projets')
 			.then((response) => {
@@ -65,36 +61,36 @@ class Projets extends Component {
 		//   title={Projets[i].title} description={Projets[i].description}
 		//   />
 		return (
-			<div className={classes.root}>
-				<MuiThemeProvider theme={theme}>
-					{/*fonction onChange pour récupérer la valeur entrée dans le Textfield */}
-					<TextField hintText="Nom" floatingLabelText="Nom" onChange={this.updateFilter} />
-					<Button size="small" variant="raised" color="primary" className={classes.button1}>
-						Rechercher
-					</Button>
-					<Button size="small" variant="raised" color="primary" className={classes.button2}>
-						+ Ajouter un projet
-					</Button>
-					<br />
-					<br />
-					<br />
-					<Grid container>
-						{// NB: pour moi, "Projects" signifie tous les projets. L'argument "project" représente chacun des projets (chaque projet, individuellement); tandis que "i" représente chaque propriété/clef à l'intérieur de chaque projet...
-						this.state.projects.map((project) => {
-							{
-								console.log(project.id)
-							}
+			<div className="size1">
+				<div className={classes.root}>
+					<MuiThemeProvider theme={theme}>
+						{/*fonction onChange pour récupérer la valeur entrée dans le Textfield */}
+						<TextField hintText="Nom" floatingLabelText="Nom" onChange={this.updateFilter} />
+						<Button size="small" variant="raised" color="primary" className={classes.button1}>
+							Rechercher
+						</Button>
+						{/* <ResponsiveDialog /> */}
+						<br />
+						<br />
+						<br />
+						<Grid container>
+							{// NB: pour moi, "Projects" signifie tous les projets. L'argument "project" représente chacun des projets (chaque projet, individuellement); tandis que "i" représente chaque propriété/clef à l'intérieur de chaque projet...
+							this.state.projects.map((project) => {
+								{
+									console.log(project.id)
+								}
 
-							return (
-								<Grid item xs={12} md={6} lg={3}>
-									<Block title={project.title} description={project.description} />
-									{/* <div>{project.title}</div>
+								return (
+									<Grid item xs={12} md={6} lg={3}>
+										<Block title={project.title} description={project.description} />
+										{/* <div>{project.title}</div>
 										<div>{project.description}</div> */}
-								</Grid>
-							)
-						})}
-					</Grid>
-				</MuiThemeProvider>
+									</Grid>
+								)
+							})}
+						</Grid>
+					</MuiThemeProvider>
+				</div>
 			</div>
 		)
 	}

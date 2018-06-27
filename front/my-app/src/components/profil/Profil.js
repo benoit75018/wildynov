@@ -7,7 +7,7 @@ import './Profils.css'
 import Button from '@material-ui/core/Button'
 import TextField from 'material-ui/TextField'
 import NavBar from '../AppBar'
-
+import Logo from '../logo/Logo'
 const theme = createMuiTheme({
 	palette: {
 		primary: { main: '#3f51b5' }
@@ -29,14 +29,7 @@ class Profil extends React.Component {
 	render() {
 		return (
 			<div>
-				<a href="/home" className="brand-logo center">
-					{
-						<img
-							src="https://image.noelshack.com/fichiers/2018/24/3/1528883121-webp-net-resizeimage.png"
-							alt="logo"
-						/>
-					}
-				</a>
+				<Logo />
 				<NavBar />
 
 				<MuiThemeProvider theme={theme}>
@@ -63,48 +56,6 @@ class Profil extends React.Component {
 		)
 	}
 }
-<<<<<<< HEAD
-=======
-
-/*FRONT OF THIS PAGE */
-export const ProfilForm = () => (
-	/* CAN CLICK ON LOGO */
-	<div>
-		<a href="#" linkButton={true} href="/home" class="brand-logo center">
-			{<img src="https://image.noelshack.com/fichiers/2018/24/3/1528883121-webp-net-resizeimage.png" />}
-		</a>
-		<NavBar />
-
-		<MuiThemeProvider theme={theme}>
-			<nav>
-				<TextField hintText="Nom" floatingLabelText="Nom" />
-				<br />
-				<TextField hintText="Prénom" floatingLabelText="Prénom" />
-				<br />
-				<SelectsCampus />
-				<br />
-				<SelectsPromo />
-				<br />
-				<TextField hintText="Compétences" floatingLabelText="Compétences" />
-				<br />
-				<Button variant="raised" color="primary" style={style}>
-					Modifier
-				</Button>
-				<Button variant="raised" color="primary" style={style}>
-					Enregistrer
-				</Button>
-			</nav>
-		</MuiThemeProvider>
-	</div>
-)
-
-/*FRONT OF THIS PAGE */
-export const Profil = () => (
-	<Router>
-		<Route component={ModalSwitch} />
-	</Router>
-)
->>>>>>> c4f398afedc062b72cfcd5eed6a6c82bf28414b0
 const style = {
 	margin: 15
 }

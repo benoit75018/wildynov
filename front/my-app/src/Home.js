@@ -1,6 +1,8 @@
 import React from 'react'
 import NavBar from './components/AppBar'
-
+import Projets from './components/projets/Projets'
+import Logo from './components/logo/Logo'
+import Block from './components/projets/Block'
 /*HE HOME PAGE FOR STUDENTS*/
 class Home extends React.Component {
 	constructor(props) {
@@ -11,18 +13,11 @@ class Home extends React.Component {
 	render() {
 		return (
 			<div>
-				<div className="containers">
-					<a href="/home" className="brand-logo center">
-						{
-							<img
-								src="https://image.noelshack.com/fichiers/2018/24/3/1528883121-webp-net-resizeimage.png"
-								alt="logo"
-							/>
-						}
-					</a>
+				<Logo />
 
-					<NavBar />
-				</div>
+				<NavBar />
+				<Projets />
+				<Block />
 			</div>
 		)
 	}

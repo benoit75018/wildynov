@@ -14,52 +14,51 @@ import Button from '@material-ui/core/Button'
 import Divider from '@material-ui/core/Divider'
 
 class Block extends Component {
-  constructor(props){
-    super(props);
+	constructor(props) {
+		super(props)
 
-    this.state={
-      titre:'',
-      description:''
-    }
-  }
+		this.state = {
+			titre: '',
+			description: ''
+		}
+	}
 
-  render() {
+	render() {
 		const { card, title, description, button } = this.props
-    return (
-      <div>
-        <Card className={card}>
-          <CardContent>
-            <Typography variant="display1" color="textSecondary">
-            {title}
-            </Typography>
-            <Divider/>
-            <Typography component="p">
-            <p>{description}</p>
-            </Typography>
-          </CardContent>
-          <CardActions>
-            <Button variant="contained" size="small" className={button}>Voir +</Button>
-          </CardActions>
-        </Card>
-        <br />
-      </div>
-    );
-  }
+		return (
+			<div>
+				<Card className={card}>
+					<CardContent>
+						<Typography variant="display1" color="textSecondary">
+							{title}
+						</Typography>
+						<Divider />
+						<Typography component="p">
+							<p>{description}</p>
+						</Typography>
+					</CardContent>
+					<CardActions>
+						<Button variant="contained" size="small" className={button}>
+							Voir +
+						</Button>
+					</CardActions>
+				</Card>
+				<br />
+			</div>
+		)
+	}
 }
 
 const styles = {
-  card: {
-   width: 350,
-   height: 200
-
-  },
-  title: {
-    // marginBottom: 16,
-    fontSize: 14
-  },
-  button: {
-
-  }
+	card: {
+		width: 350,
+		height: 200
+	},
+	title: {
+		// marginBottom: 16,
+		fontSize: 14
+	},
+	button: {}
 }
 
-export default withStyles(styles) (Block)
+export default withStyles(styles)(Block)

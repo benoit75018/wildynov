@@ -1,8 +1,9 @@
 import React from 'react'
-import './Projets.css'
+import './Projetss.css'
 import NavBar from '../AppBar'
 import ResponsiveDialog from './modalform'
-
+import Projets from '../projets/Projets'
+import Logo from '../logo/Logo'
 class Projet extends React.Component {
 	constructor(props) {
 		super(props)
@@ -15,16 +16,9 @@ class Projet extends React.Component {
 	render() {
 		return (
 			<div>
-				<a href="/home" className="brand-logo center">
-					{
-						<img
-							src="https://image.noelshack.com/fichiers/2018/24/3/1528883121-webp-net-resizeimage.png"
-							alt="logo"
-						/>
-					}
-				</a>
+				<Logo />
 				<NavBar />
-				<ResponsiveDialog />
+				<Projets /> <ResponsiveDialog />
 			</div>
 		)
 	}

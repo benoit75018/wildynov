@@ -1,7 +1,6 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const mysql = require('mysql')
-const app = express()
 const userRouter = require('./routes/user/user.js')
 const profilRouter = require('./routes/authcontrol/auth.js')
 // const projetsRouter = require('./routes/allprojets/projets.js')
@@ -23,7 +22,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.use(cors())
 app.use(validator())
-app.use(expressJWT({ secret: process.env.SECRET_TOKEN }).unless({ path: [ '/auth/signup' ] })) //protect routes
+// app.use(expressJWT({ secret: process.env.SECRET_TOKEN }).unless({ path: [ '/auth/signup' ] })) //protect routes
 
 ////////////ROUTING////////////////////////
 

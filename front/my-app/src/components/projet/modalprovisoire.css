@@ -1,6 +1,12 @@
 .size {
   width: 2500px;
-  padding: 50px 24px;
+  padding: 0 60px;
+
+}
+
+.size1 {
+  width: 2500px;
+  padding: 30px 0;
 
 }
 
@@ -31,4 +37,9 @@
   width: 350px;
   padding: 20px 224px;
 
+}
+
+.classes.button1 {
+  width: 2500px;
+  padding: 50px 24px;
 }

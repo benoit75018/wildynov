@@ -3,7 +3,11 @@ import { StyleSheet } from 'react-native';
 export default StyleSheet.create({
   'size': {
     'width': [{ 'unit': 'px', 'value': 2500 }],
-    'padding': [{ 'unit': 'px', 'value': 50 }, { 'unit': 'px', 'value': 24 }, { 'unit': 'px', 'value': 50 }, { 'unit': 'px', 'value': 24 }]
+    'padding': [{ 'unit': 'px', 'value': 0 }, { 'unit': 'px', 'value': 60 }, { 'unit': 'px', 'value': 0 }, { 'unit': 'px', 'value': 60 }]
+  },
+  'size1': {
+    'width': [{ 'unit': 'px', 'value': 2500 }],
+    'padding': [{ 'unit': 'px', 'value': 30 }, { 'unit': 'px', 'value': 0 }, { 'unit': 'px', 'value': 30 }, { 'unit': 'px', 'value': 0 }]
   },
   'container': {
     'width': [{ 'unit': '%H', 'value': 4 }],
@@ -24,5 +28,9 @@ export default StyleSheet.create({
   'input': {
     'width': [{ 'unit': 'px', 'value': 350 }],
     'padding': [{ 'unit': 'px', 'value': 20 }, { 'unit': 'px', 'value': 224 }, { 'unit': 'px', 'value': 20 }, { 'unit': 'px', 'value': 224 }]
+  },
+  'classesbutton1': {
+    'width': [{ 'unit': 'px', 'value': 2500 }],
+    'padding': [{ 'unit': 'px', 'value': 50 }, { 'unit': 'px', 'value': 24 }, { 'unit': 'px', 'value': 50 }, { 'unit': 'px', 'value': 24 }]
   }
 });

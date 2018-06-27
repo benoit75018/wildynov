@@ -3,7 +3,7 @@ import React from 'react'
 import RaisedButton from 'material-ui/RaisedButton'
 import './logincss.css'
 import TextField from 'material-ui/TextField'
-import Logo from '../logo/Logo'
+import Logononclick from '../logo/Logononcliquable'
 import { Link } from '@reach/router'
 import axios from 'axios'
 class Login extends React.Component {
@@ -46,7 +46,7 @@ class Login extends React.Component {
 	render() {
 		return (
 			<div className="body">
-				<Logo />
+				<Logononclick />
 				<form onSubmit={this.handleSubmit}>
 					<TextField
 						onChange={this.handleChange}
