@@ -1,11 +1,11 @@
 # See https://help.github.com/ignore-files/ for more about ignoring files.
 
-# dependencies
-<<<<<<< HEAD
+
+
 /node_modules/.DS_Store
-=======
 /node_modules/
 package.json
 package-lock.json
 DS_Store
->>>>>>> 0b4bef6a9bf9c32cc870c109eb5c99a11017267b
+.DS_Store
+.env
