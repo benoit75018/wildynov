@@ -1,8 +1,8 @@
 import React from 'react'
 
 // Menus déroulants
-import SelectsCampus from './SelectCampus'
-import SelectsPromo from './SelectPromo'
+import SelectCampus from '../profil/SelectCampus'
+import SelectPromo from '../profil/SelectPromo'
 
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
 import Button from '@material-ui/core/Button'
@@ -16,12 +16,12 @@ const theme = createMuiTheme({
 	}
 })
 
-class ModalSwitch extends React.Component {
+class Inscription extends React.Component {
 	constructor(props) {
 		super(props)
 		this.state = {
 			first_name: '',
-			name: '',
+         	name: '',
 			campus: '',
 			promo: '',
 			skill: ''
@@ -30,19 +30,10 @@ class ModalSwitch extends React.Component {
 
 	render() {
 		return (
-			/*CREATE ROUTES*/
-			<div>
-				<Switch>
-					<Route exact path="/inscription" component={Registration} />
-				</Switch>
-			</div>
-		)
-	}
-}
-
+		
 /*FRONT OF THIS PAGE */
-export const Registration = () => (
-	/* CAN CLICK ON LOGO */
+
+
 	<div>
 		<a href="#" linkButton={true} href="/home" class="brand-logo center">
 			{<img src="https://image.noelshack.com/fichiers/2018/24/3/1528883121-webp-net-resizeimage.png" />}
@@ -57,13 +48,10 @@ export const Registration = () => (
 				<br />
                 <TextField hintText="Compétences" floatingLabelText="Compétences" />
                 <br />
-				<SelectsCampus />
+				<SelectCampus />
 				<br />
-				<SelectsPromo />
+				<SelectPromo />
 				<br />
-				<Button variant="raised" color="primary" style={style}>
-					Modifier
-				</Button>
 				<Button variant="raised" color="primary" style={style}>
 					Enregistrer
 				</Button>
@@ -71,15 +59,9 @@ export const Registration = () => (
 		</MuiThemeProvider>
 	</div>
 )
-
-/*FRONT OF THIS PAGE */
-export const Registration = () => (
-	<Router>
-		<Route component={ModalSwitch} />
-	</Router>
-)
+	}}
 const style = {
 	margin: 15
 }
 
-export default Registration
+export default Inscription
