@@ -3,7 +3,7 @@ import RaisedButton from 'material-ui/RaisedButton'
 import TextField from 'material-ui/TextField'
 import Logononclick from '../logo/Logononcliquable'
 import axios from 'axios'
-
+import AlertDialog from './Messageok'
 class Signup extends React.Component {
 	constructor(props) {
 		super(props)
@@ -29,7 +29,7 @@ class Signup extends React.Component {
 			})
 			.then(function(response) {
 				if (!response.ok) {
-					alert('Message successfully sent')
+					return <AlertDialog />
 				}
 				throw Error(response.statusText)
 			})
