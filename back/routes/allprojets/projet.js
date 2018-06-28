@@ -4,7 +4,7 @@ const connection = require('../../helpers/connect.js');
 
 
 
-////////////Ajouter un projet///////////
+////////////Route pour ajouter un projet sur la page ajout projets ///////////
 router.post('/addProjet', (req, res) => {
 
     const data = [

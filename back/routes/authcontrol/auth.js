@@ -2,12 +2,15 @@ const express = require('express')
 const router = express.Router()
 const connection = require('../../helpers/connect.js')
 const nodemailer = require('nodemailer')
-const { check, validationResult } = require('express-validator/check')
+const {
+	check,
+	validationResult
+} = require('express-validator/check')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 const secret = require('dotenv').config()
 
-router.post('/signup', [ check('email').isEmail() ], (req, res) => {
+router.post('/signup', [check('email').isEmail()], (req, res) => {
 	const emailing = req.body.email
 
 	////////////verif if email valide /////////////
@@ -25,9 +28,9 @@ router.post('/signup', [ check('email').isEmail() ], (req, res) => {
 	const sql = `INSERT INTO profile (email, password) VALUES (?,?)` ///////INSERT VALUE MYSQL//////
 	const saltRounds = 8
 
-	bcrypt.hash(randomPass, saltRounds, function(err, hash) {
+	bcrypt.hash(randomPass, saltRounds, function (err, hash) {
 		// Store hash in your password DB
-		connection.query(sql, [ emailing, hash ], function(err, result) {
+		connection.query(sql, [emailing, hash], function (err, result) {
 			if (err) {
 				return res.status(500).json({
 					flash: err.message
@@ -74,7 +77,7 @@ router.post('/signup', [ check('email').isEmail() ], (req, res) => {
 	})
 })
 
-router.post('/login', [ check('email').isEmail() ], (req, res) => {
+router.post('/login', [check('email').isEmail()], (req, res) => {
 	const password = req.body.password
 	const email = req.body.email
 
@@ -88,7 +91,7 @@ router.post('/login', [ check('email').isEmail() ], (req, res) => {
 	///////////////////////////////////////////
 
 	//////check into database if password and mail match //////////////
-	connection.query('SELECT * FROM profile WHERE email = ?', [ email ], function(selectError, results, fields) {
+	connection.query('SELECT * FROM profile WHERE email = ?', [email], function (selectError, results, fields) {
 		if (selectError) {
 			// console.log("error ocurred",error);
 			res.send({
@@ -101,7 +104,7 @@ router.post('/login', [ check('email').isEmail() ], (req, res) => {
 				failed: 'Email does not exits'
 			})
 		} else {
-			bcrypt.compare(password, results[0].password, function(bcryptError, validPassword) {
+			bcrypt.compare(password, results[0].password, function (bcryptError, validPassword) {
 				if (!validPassword || bcryptError) {
 					res.send({
 						code: 204,
@@ -109,13 +112,11 @@ router.post('/login', [ check('email').isEmail() ], (req, res) => {
 					})
 				} else {
 					/////////token /////////
-					const token = jwt.sign(
-						{
+					const token = jwt.sign({
 							email: results[0].email,
 							userID: results[0]._id
 						},
-						process.env.SECRET_TOKEN,
-						{
+						process.env.SECRET_TOKEN, {
 							expiresIn: '6h'
 						}
 					)

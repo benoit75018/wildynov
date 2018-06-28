@@ -52,7 +52,7 @@ class Signup extends React.Component {
 					<TextField
 						// email={this.state.email}
 						onChange={this.handleChange}
-						hintText="@enov"
+						hintText="@ynov"
 						floatingLabelText="email"
 						name="email"
 						variant="raised"
