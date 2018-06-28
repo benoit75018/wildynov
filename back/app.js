@@ -3,8 +3,8 @@ const bodyParser = require('body-parser')
 const mysql = require('mysql')
 const userRouter = require('./routes/user/user.js')
 const profilRouter = require('./routes/authcontrol/auth.js')
-// const projetsRouter = require('./routes/allprojets/projets.js')
-// const addProjetsRouter = require('./routes/allprojets/addProjets.js')
+const inProjetRouter = require('./routes/allprojets/projet.js')
+const seeProjetRouter = require('./routes/allprojets/Projets.js')
 const connection = require('./helpers/connect.js')
 const cors = require('cors')
 const morgan = require('morgan')
@@ -18,7 +18,9 @@ const adminProject = require('./routes/admin/routes/projets.js')
 
 /////////// Middleware/////////////////////
 app.use(morgan('dev'))
-app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.urlencoded({
+	extended: false
+}))
 app.use(bodyParser.json())
 app.use(cors())
 app.use(validator())
@@ -27,13 +29,12 @@ app.use(validator())
 ////////////ROUTING////////////////////////
 
 app.use('/auth', profilRouter)
-// app.use('/projet', inProjetRouter)
-// app.use('/projets', seeProjetRouter)
+app.use('/projet', inProjetRouter)
+app.use('/projets', seeProjetRouter)
 app.use('/user', userRouter)
 app.use('/authadmin', adminRouter)
 app.use('/membersAdmin', adminMember)
 app.use('/membersProjects', adminProject)
-
 app.use('/auth', profilRouter)
 app.use('/auth', adminRouter)
 
