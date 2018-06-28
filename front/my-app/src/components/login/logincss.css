@@ -1,15 +1,17 @@
-.App {
+div {
   text-align: center;
 }
 
-.MuiButton-containedPrimary-11 {
-  color: #fff;
-  background-color: #b53f59;
+.nav-wrapper {
+  padding: 0;
 }
 
-.nav {
-  text-align: right;
-  flex: right;
+.register {
+  padding: 110px;
+}
+
+h1 {
+  text-align: center;
 }
 
 .App-logo {
@@ -17,10 +19,9 @@
   height: 80px;
 }
 
-.but {
-  color: rgba(0, 0, 0, 0.26);
-  top: 20%;
-  bottom: 80%;
+dMuiThemeProvide {
+  text-align: center;
+  padding: 180px;
 }
 
 .App-header {

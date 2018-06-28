@@ -1,26 +1,8 @@
-
-  .container{
-    display: -webkit-inline-box;
-    
-
+div{
+    text-align: center;
   }
-  .add{
-    text-align:right;
-  }
-  .container2{
-    display: -webkit-inline-box;
-    
-  }
-.composant{
-  border: 1px solid black;
-}
-.titre{
-  border: 1px solid black;
-}
-
   nav{
-    border: 1px solid black;
-    padding: 30px;
+    padding: 130px;
   }
   .nav-wrapper{
     padding:0;
@@ -28,7 +10,7 @@
   .register{
     padding: 110px;
   }
-
+  
   h1{
   text-align: center;
   }
