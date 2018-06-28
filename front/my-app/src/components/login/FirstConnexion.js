@@ -3,12 +3,13 @@ import RaisedButton from 'material-ui/RaisedButton'
 import TextField from 'material-ui/TextField'
 import Logononclick from '../logo/Logononcliquable'
 import axios from 'axios'
-import AlertDialog from './Messageok'
+import CustomizedSnackbars from './alert'
 class Signup extends React.Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			email: ''
+			email: '',
+			message: <CustomizedSnackbars />
 		}
 	}
 	handleChange = (event) => {
@@ -18,10 +19,12 @@ class Signup extends React.Component {
 
 	handleSubmit = (event) => {
 		this.state = {
-			email: ''
+			email: '',
+			open: <CustomizedSnackbars />
 		}
 		console.log('An email has been sent with an automatic password' + this.state.email)
 		event.preventDefault()
+		const open = <CustomizedSnackbars />
 		console.log(this.state['email'])
 		axios
 			.post('http://localhost:8080/auth/signup', {
@@ -29,7 +32,6 @@ class Signup extends React.Component {
 			})
 			.then(function(response) {
 				if (!response.ok) {
-					return <AlertDialog />
 				}
 				throw Error(response.statusText)
 			})
@@ -38,16 +40,17 @@ class Signup extends React.Component {
 			})
 			.catch(function(error) {
 				console.log(error)
-				alert('Email non valide')
+
+				return open
 			})
 	}
-
 	render() {
 		return (
 			<div>
 				<Logononclick />
 				<form onSubmit={this.handleSubmit}>
 					<TextField
+						// email={this.state.email}
 						onChange={this.handleChange}
 						hintText="@enov"
 						floatingLabelText="email"

@@ -15,25 +15,14 @@ import WarningIcon from '@material-ui/icons/Warning'
 import { withStyles } from '@material-ui/core/styles'
 
 const variantIcon = {
-	success: CheckCircleIcon,
-	warning: WarningIcon,
-	error: ErrorIcon,
-	info: InfoIcon
+	success: CheckCircleIcon
 }
 
 const styles1 = (theme) => ({
 	success: {
 		backgroundColor: green[600]
 	},
-	error: {
-		backgroundColor: theme.palette.error.dark
-	},
-	info: {
-		backgroundColor: theme.palette.primary.dark
-	},
-	warning: {
-		backgroundColor: amber[700]
-	},
+
 	icon: {
 		fontSize: 20
 	},
@@ -89,7 +78,7 @@ const styles2 = (theme) => ({
 
 class CustomizedSnackbars extends React.Component {
 	state = {
-		open: false
+		open: true
 	}
 
 	handleClick = () => {
@@ -109,9 +98,6 @@ class CustomizedSnackbars extends React.Component {
 
 		return (
 			<div>
-				<Button className={classes.margin} onClick={this.handleClick}>
-					Open success snackbar
-				</Button>
 				<Snackbar
 					anchorOrigin={{
 						vertical: 'bottom',
@@ -124,29 +110,9 @@ class CustomizedSnackbars extends React.Component {
 					<MySnackbarContentWrapper
 						onClose={this.handleClose}
 						variant="success"
-						message="This is a success message!"
+						message="Un email vous a été adressé"
 					/>
 				</Snackbar>
-				<MySnackbarContentWrapper
-					variant="error"
-					className={classes.margin}
-					message="This is an error message!"
-				/>
-				<MySnackbarContentWrapper
-					variant="warning"
-					className={classes.margin}
-					message="This is a warning message!"
-				/>
-				<MySnackbarContentWrapper
-					variant="info"
-					className={classes.margin}
-					message="This is an information message!"
-				/>
-				<MySnackbarContentWrapper
-					variant="success"
-					className={classes.margin}
-					message="This is a success message!"
-				/>
 			</div>
 		)
 	}

@@ -84,7 +84,7 @@ class MenuAppBar extends React.Component {
 									<Link to="/profil">
 										<MenuItem onClick={this.handleClose}>Profile</MenuItem>
 									</Link>
-									<MenuItem onClick={this.handleClose}>My account</MenuItem>
+									<MenuItem onClick={this.handleClose}>Deconnexion</MenuItem>
 								</Menu>
 							</div>
 						)}
