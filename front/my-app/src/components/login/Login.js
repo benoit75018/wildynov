@@ -19,18 +19,16 @@ class Login extends React.Component {
 		this.setState({ [event.target.name]: event.target.value })
 	}
 
-	Submit = (event) => {
+	onSubmit = (event) => {
 		const user = this.state
 		event.preventDefault()
 		console.log('uuuuuuuuuuuuuuuuuu', event)
-
+		const verifyToken = localStorage.getItem('verifyToken')
 		axios.post('http://localhost:8080/auth/login', user).then((res) => {
 			console.log(res)
-			localStorage.setItem('token', res.headers['x-access-token'])
-			console.log('token', localStorage.getItem('token'))
-
-			// localStorage.setItem('token', res.headers['x-access-token'])
-			// window.axios.defaults.headers.common['Authorization']= ''
+			localStorage.setItem('Token', res.headers['x-access-Token'])
+			console.log('verifyToken', localStorage.getItem('verifyToken'))
+			axios.defaults.headers.common['Authorization'] = `Bearer ${verifyToken}`
 		})
 	}
 
@@ -57,7 +55,13 @@ class Login extends React.Component {
 						floatingLabelText="Password"
 					/>
 					<br />
-					<RaisedButton type="button" onClick={this.Submit} label="Connexion" primary={true} style={style} />
+					<RaisedButton
+						type="button"
+						onClick={this.onSubmit}
+						label="Connexion"
+						primary={true}
+						style={style}
+					/>
 					<Link to="/signup">
 						<RaisedButton label="Première connexion" primary={true} to="/signup" />
 					</Link>
