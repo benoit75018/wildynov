@@ -42,14 +42,14 @@ router.post('/signup', [ check('email').isEmail() ], (req, res) => {
 						port: 465,
 						secure: false, // true for 465, false for other ports
 						auth: {
-							user: process.env.emailTest, // generated ethereal user
-							pass: process.env.passwordEmail // generated ethereal password
+							user: 'mr.souid@live.fr', // generated ethereal user
+							pass: 'ad&gjk456' // generated ethereal password
 						}
 					})
 
 					// setup email data with unicode symbols
 					let mailOptions = {
-						from: `"Fred Foo 👻" <${process.env.emailTest}>`, // sender address
+						from: `"Fred Foo 👻" <${'mr.souid@live.fr'}>`, // sender address
 						to: emailing, // list of receivers
 						subject: 'Hello ✔', // Subject line
 						text: 'Hello world?', // plain text body

@@ -15,43 +15,34 @@ class Login extends React.Component {
 		}
 	}
 	handleChange = (event) => {
-		console.log(event)
-		this.setState({ email: event.target.email, password: event.target.password })
+		console.log(this.state)
+		this.setState({ [event.target.name]: event.target.value })
 	}
 
-	handleSubmit = (event) => {
-		this.state = {
-			email: '',
-			password: ''
-		}
-		console.log('You are connected' + this.state.email)
+	Submit = (event) => {
+		const user = this.state
 		event.preventDefault()
-		console.log(this.state['email'])
-		axios
-			.post('http://localhost:8080/auth/login')
-			.then(function(response) {
-				if (!response.ok) {
-					// alert('connesuccessfully sent')
-					throw Error(response.statusText)
-				}
-			})
-			.then(function(response) {
-				console.log(response)
-			})
-			.catch(function(error) {
-				console.log(error)
-				alert('error connection')
-			})
+		console.log('uuuuuuuuuuuuuuuuuu', event)
+
+		axios.post('http://localhost:8080/auth/login', user).then((res) => {
+			console.log(res)
+			localStorage.setItem('token', res.headers['x-access-token'])
+			console.log('token', localStorage.getItem('token'))
+
+			// localStorage.setItem('token', res.headers['x-access-token'])
+			// window.axios.defaults.headers.common['Authorization']= ''
+		})
 	}
+
 	render() {
 		return (
 			<div className="body">
 				<Logononclick />
-				<form onSubmit={this.handleSubmit}>
+				<form onSubmit={this.state}>
 					<TextField
 						onChange={this.handleChange}
-						hintText="@enov"
 						floatingLabelText="Email"
+						name="email"
 						variant="raised"
 						color="primary"
 					/>
@@ -61,11 +52,12 @@ class Login extends React.Component {
 					<TextField
 						onChange={this.handleChange}
 						type="password"
+						name="password"
 						hintText="Enter your Password"
 						floatingLabelText="Password"
 					/>
 					<br />
-					<RaisedButton type="submit" label="Connexion" primary={true} style={style} />
+					<RaisedButton type="button" onClick={this.Submit} label="Connexion" primary={true} style={style} />
 					<Link to="/signup">
 						<RaisedButton label="Première connexion" primary={true} to="/signup" />
 					</Link>
