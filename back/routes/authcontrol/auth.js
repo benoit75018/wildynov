@@ -116,7 +116,7 @@ router.post('/login', [ check('email').isEmail() ], (req, res) => {
 						},
 						process.env.SECRET_TOKEN,
 						{
-							expiresIn: '1h'
+							expiresIn: '6h'
 						}
 					)
 					//////////////////////////
