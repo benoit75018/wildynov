@@ -50,7 +50,7 @@ class Login extends React.Component {
 				<form onSubmit={this.handleSubmit}>
 					<TextField
 						onChange={this.handleChange}
-						hintText="@enov"
+						hintText="@ynov"
 						floatingLabelText="Email"
 						variant="raised"
 						color="primary"
