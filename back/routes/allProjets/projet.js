@@ -1,12 +1,12 @@
 const express = require('express');
 const router = express.Router();
 const connection = require('../../helpers/connect.js');
-
+const verifToken = require('../../middleware/verifToken.js')
 
 
 ////////////Ajouter un projet///////////
 
-router.post('/addProjet', (req, res) => {
+router.post('/addProjet', verifToken, (req, res) => {
 
     const data = [
         req.body.id_profile,

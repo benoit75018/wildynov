@@ -1,9 +1,10 @@
 const express = require('express');
 const router = express.Router();
 const connection = require('../../helpers/connect.js');
+const verifToken = require('../../middleware/verifToken.js')
 
 
-router.post('/registration', (req, res) => {
+router.post('/registration', verifToken, (req, res) => {
     const data = [
         req.body.id, 
         req.body.name, 
