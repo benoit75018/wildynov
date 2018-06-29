@@ -7,7 +7,7 @@ import Grid from '@material-ui/core/Grid'
 import PropTypes from 'prop-types'
 import axios from 'axios'
 import Block from './Block'
-import '../projet/modalprovisoire.css'
+// import '../projet/modalprovisoire.css'
 
 // import ResponsiveDialog from '../projet/modalform'
 const theme = createMuiTheme({
@@ -33,7 +33,7 @@ class Projets extends Component {
 
 	componentDidMount() {
 		axios
-			.get('http://localhost:8080/allprojets/projets')
+			.get('http://localhost:8080/projets/showProjet')
 			.then((response) => {
 				console.log('--response--', response.data.results)
 				this.setState({ projects: response.data.results })
@@ -77,7 +77,7 @@ class Projets extends Component {
 							{// NB: pour moi, "Projects" signifie tous les projets. L'argument "project" représente chacun des projets (chaque projet, individuellement); tandis que "i" représente chaque propriété/clef à l'intérieur de chaque projet...
 							this.state.projects.map((project) => {
 								{
-									console.log(project.id)
+									console.log('it works!')
 								}
 
 								return (
