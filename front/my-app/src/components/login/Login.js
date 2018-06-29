@@ -55,12 +55,13 @@ class Login extends React.Component {
 					floatingLabelText="Password"
 				/>
 				<br />
-
+				<Link to="/home">
 				<RaisedButton type="button" onClick={this.Submit} label="Connexion" primary={true} style={style} />
-
+</Link>
 				<Link to="/signup">
 					<RaisedButton label="Première connexion" primary={true} to="/signup" />
 				</Link>
+				
 			</div>
 		)
 	}
