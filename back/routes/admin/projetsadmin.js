@@ -1,10 +1,11 @@
 const express = require('express')
 const router = express.Router()
-const connection = require('../../../helpers/connect.js')
+const connection = require('../../helpers/connect.js')
 
-//////// route pour afficher les projets ////////////
 
-router.get('/project', (req, res) => {
+
+//////// route pour afficher les projets sur la page admin////////////
+router.get('/projet', (req, res) => {
 	const SELECT_PROJECT_QUERY = `SELECT * FROM project`
 
 	connection.query(SELECT_PROJECT_QUERY, (err, results) => {

@@ -27,20 +27,26 @@ class ResponsiveDialog extends React.Component {
 
 		return (
 			/*PROJECTFORM*/
-			<div>
-				<div className="size">
+			<div className="size">
+				<div>
 					<RaisedButton onClick={this.handleClickOpen} label="ajouter un projet" primary={true} />
 
 					<Dialog
+						style={{ Color: '#00BCD4' }}
+						className="container"
 						fullScreen={fullScreen}
 						open={this.state.open}
 						onClose={this.handleClose}
 						aria-labelledby="responsive-dialog-title"
 					>
-						<DialogTitle id="responsive-dialog-title">{'Nouveau Projet'}</DialogTitle>
+						<DialogTitle className="title" id="responsive-dialog-title">
+							{'Nouveau Projet'}
+						</DialogTitle>
 
 						<form className="form">
 							<TextField
+								style={{ Color: '#00BCD4' }}
+								className="input"
 								id="date"
 								name="deadline_application"
 								label="candidature"
@@ -52,6 +58,7 @@ class ResponsiveDialog extends React.Component {
 							/>
 							<br />
 							<TextField
+								className="input"
 								id="date"
 								name="deadline_project"
 								label="fin du projet "
@@ -64,6 +71,8 @@ class ResponsiveDialog extends React.Component {
 							<br />
 							<div>
 								<TextField
+									style={{ Color: '#00BCD4' }}
+									className="input"
 									required
 									id="required"
 									multiline
@@ -78,10 +87,12 @@ class ResponsiveDialog extends React.Component {
 
 							<div>
 								<TextField
+									style={{ labelColor: '#00BCD4' }}
+									className="input"
 									required
 									id="required"
 									multiline
-									rowsMax="20"
+									rowsMax="180"
 									value={this.state.description}
 									label="description du projet"
 									defaultValue=""
@@ -92,11 +103,12 @@ class ResponsiveDialog extends React.Component {
 
 							<div>
 								<TextField
+									className="input"
 									required
 									id="required"
 									value={this.state.tag}
 									label="mots clés"
-									defaultValue=""
+									defaultValue="mots clés"
 									name="tag"
 									margin="normal"
 								/>
@@ -104,7 +116,7 @@ class ResponsiveDialog extends React.Component {
 							<br />
 						</form>
 
-						<DialogActions>
+						<DialogActions className="button">
 							<Button onClick={this.handleClose} color="primary">
 								Valider
 							</Button>

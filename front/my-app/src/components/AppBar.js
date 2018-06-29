@@ -8,7 +8,9 @@ import Button from '@material-ui/core/Button'
 import IconButton from '@material-ui/core/IconButton'
 import AccountCircle from '@material-ui/icons/AccountCircle'
 import Menu from '@material-ui/core/Menu'
-import RaisedButton from 'material-ui/RaisedButton'
+import MenuItem from '@material-ui/core/MenuItem'
+import { Link } from '@reach/router'
+
 
 const styles = {
 	root: {
@@ -47,11 +49,11 @@ class MenuAppBar extends React.Component {
 
 		return (
 			<div className={classes.root}>
-				<AppBar position="static">
+				<AppBar position="static" style={{ backgroundColor: '#36B1A0' }}>
 					<Toolbar>
 						<Typography variant="title" color="inherit" className={classes.flex} />
 
-						<Button color="inherit" linkButton={true} href="/projet">
+						<Button color="inherit" href="/projet">
 							Projet
 						</Button>
 
@@ -63,7 +65,7 @@ class MenuAppBar extends React.Component {
 									onClick={this.handleMenu}
 									color="inherit"
 								>
-									<AccountCircle />
+									<AccountCircle /> 
 								</IconButton>
 
 								<Menu
@@ -80,14 +82,10 @@ class MenuAppBar extends React.Component {
 									open={open}
 									onClose={this.handleClose}
 								>
-									{/*acces the route by linkbutton imported */}
-									<li className="button">
-										<RaisedButton label="Profil" linkButton={true} href="/profil" />
-									</li>
-									<li>
-										{' '}
-										<RaisedButton label="Deconnexion" checked={auth} />
-									</li>
+									<Link to="/profil">
+										<MenuItem onClick={this.handleClose}>Profile</MenuItem>
+									</Link>
+									<MenuItem onClick={this.handleClose}>Deconnexion</MenuItem>
 								</Menu>
 							</div>
 						)}
