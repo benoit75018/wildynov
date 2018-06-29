@@ -10,6 +10,9 @@ import Projets from './components/projets/Projets'
 import Profil from './components/profil/Profil'
 import Editprofil from './components/profil/editprofil'
 import CustomizedSnackbars from './components/login/alert'
+import LoginAdmin from './components/loginAdmin/LoginAdmin'
+import ClippedDrawer from './components/adminAllprojects/adminProjects'
+import SimpleTable from './components/adminAllprojects/SimpleTable'
 import Inscription from './components/inscription/Inscription'
 import DetailProject from './components/DetailProject/DetailProject'
 
@@ -27,14 +30,18 @@ class App extends Component {
 			/*CALL ROUTES*/
 			<div className="App">
 				<Router>
-					<DetailProject path="/detailproject"/>
+					<DetailProject path="/detailproject" />
 					<Login path="/login" />
 					<Signup path="/signup" />
+					<Home exact path="/home" />
 					<Projets path="/home" />
 					<Projet path="/projet" />
-					<Inscription path="/registration"/>
+					<Inscription path="/registration" />
 					<Profil path="/profil" />
 					<Editprofil path="/editprofil" />
+					<LoginAdmin path="/login/admin" />
+					<ClippedDrawer path="/admin/home" />
+					<SimpleTable path="/admin/projet" />
 				</Router>
 				<CustomizedSnackbars />
 			</div>
