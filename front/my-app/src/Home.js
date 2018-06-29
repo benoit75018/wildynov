@@ -17,7 +17,7 @@ class Home extends React.Component {
 
 				<NavBar />
 				<Projets />
-				<Block />
+				
 			</div>
 		)
 	}
