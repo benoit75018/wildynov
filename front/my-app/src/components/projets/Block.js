@@ -38,7 +38,12 @@ class Block extends Component {
 						</Typography>
 					</CardContent>
 					<CardActions>
-						<Button variant="contained" size="small" className={button}>
+					{/* <Link to="/detail-projet">
+						<Button variant="contained" size="small" className={button} to="/detail-projet" >
+							Voir +
+						</Button>
+					</Link> */}
+						<Button variant="contained" size="small" className={button} to="/detail-projet" >
 							Voir +
 						</Button>
 					</CardActions>
