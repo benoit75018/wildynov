@@ -52,8 +52,7 @@ router.post('/signup', [ check('email').isEmail() ], (req, res) => {
 						from: `"Fred Foo 👻" <${'mr.souid@live.fr'}>`, // sender address
 						to: emailing, // list of receivers
 						subject: 'Hello ✔', // Subject line
-						text: 'Hello world?',
-						// plain text body
+						text: 'Hello world?', // plain text body
 						html: `<p>Voici votre mot de passe de connexion :${randomPass}</p>` // html body
 					}
 
@@ -110,28 +109,24 @@ router.post('/login', [ check('email').isEmail() ], (req, res) => {
 					})
 				} else {
 					/////////token /////////
-					const tokenUserinfo = { email: email, status: 'PouletMaster' } //status: recup via la bdd
-					const token = jwt.sign(tokenUserinfo, jwtSecret)
+
+					const token = jwt.sign(
+						{
+							email: results[0].email,
+							userID: results[0]._id
+						},
+						process.env.SECRET_TOKEN,
+						{
+							expiresIn: '6h'
+						}
+					)
+					//////////////////////////
+					console.log(token)
 					res.header('Access-Control-Expose-Headers', 'x-access-token')
 					res.set('x-access-token', token)
-					res.status(200).send({ details: 'user connected', profile })
-					// const token = jwt.sign(
-					// 	{
-					// 		email: results[0].email,
-					// 		userID: results[0]._id
-					// 	},
-					// 	process.env.SECRET_TOKEN,
-					// 	{
-					// 		expiresIn: '6h'
-					// 	}
-					// )
-					// //////////////////////////
-					// console.log(token)
-					// res.header('Access-Control-Expose-Headers', 'x-access-token')
-					// res.set('x-access-token', token)
-					// res.status(200).send({
-					// 	details: 'user connected'
-					// })
+					res.status(200).send({
+						details: 'user connected'
+					})
 				}
 			})
 		}

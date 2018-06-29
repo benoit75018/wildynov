@@ -24,7 +24,7 @@ class Login extends React.Component {
 		const user = this.state
 		// event.preventDefault()
 		// console.log('uuuuuuuuuuuuuuuuuu', event)
-		const verifyToken = localStorage.getItem('token')
+
 		axios.post('http://localhost:8080/auth/login', user).then((response) => {
 			localStorage.setItem('token', response.data.token)
 		})

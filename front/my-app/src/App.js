@@ -10,7 +10,7 @@ import Editprofil from './components/profil/editprofil'
 import CustomizedSnackbars from './components/login/alert'
 import LoginAdmin from './components/loginAdmin/LoginAdmin'
 import ClippedDrawer from './components/adminAllprojects/adminProjects'
-import Projetlist from './components/adminAllprojects/projectlist'
+import SimpleTable from './components/adminAllprojects/SimpleTable'
 class App extends Component {
 	constructor(props) {
 		super(props)
@@ -30,7 +30,7 @@ class App extends Component {
 					<Editprofil path="/editprofil" />
 					<LoginAdmin path="/login/admin" />
 					<ClippedDrawer path="/admin/home" />
-					<Projetlist path="/admin/projet" />
+					<SimpleTable path="/admin/projet" />
 				</Router>
 				<CustomizedSnackbars />
 			</div>
