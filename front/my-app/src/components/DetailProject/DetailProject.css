@@ -1,0 +1,38 @@
+
+.bloc{
+    /* background-color: #36B1A0;
+    width : 55 px;
+    height : 55 px; */
+}
+.container{
+    /* /* background-color: #36B1A0;
+    width : 55 px;import Grid from '@material-ui/core/Grid'
+    height : 55 px; */
+} 
+.carte{
+    /* background-color: rgb(#36B1A0); */
+    padding: 10px;
+    
+ } 
+.membres{
+    /* background-color: #36B1A0; */
+    padding: 10px;
+    
+   /* margin: 25px; */
+    /* display: 2;  */
+    /* padding-right: 2px; */
+
+}
+
+.EditionProject{
+    /* background-color: #36B1A0; */
+    padding: 10px;
+    
+   /* padding-Left: 2px; */
+    /* /display: 2;  */
+}
+
+.test{
+    background-color: rgb(173, 184, 186);
+    margin: 10px;
+}
