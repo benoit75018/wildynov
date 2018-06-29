@@ -8,7 +8,9 @@ import Projet from './components/projet/Projet'
 import Profil from './components/profil/Profil'
 import Editprofil from './components/profil/editprofil'
 import CustomizedSnackbars from './components/login/alert'
-
+import LoginAdmin from './components/loginAdmin/LoginAdmin'
+import ClippedDrawer from './components/adminAllprojects/adminProjects'
+import Projetlist from './components/adminAllprojects/projectlist'
 class App extends Component {
 	constructor(props) {
 		super(props)
@@ -26,6 +28,9 @@ class App extends Component {
 					<Projet path="/projet" />
 					<Profil path="/profil" />
 					<Editprofil path="/editprofil" />
+					<LoginAdmin path="/login/admin" />
+					<ClippedDrawer path="/admin/home" />
+					<Projetlist path="/admin/projet" />
 				</Router>
 				<CustomizedSnackbars />
 			</div>

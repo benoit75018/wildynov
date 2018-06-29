@@ -6,6 +6,7 @@ import TextField from 'material-ui/TextField'
 import Logononclick from '../logo/Logononcliquable'
 import { Link } from '@reach/router'
 import axios from 'axios'
+
 class Login extends React.Component {
 	constructor(props) {
 		super(props)
@@ -19,16 +20,13 @@ class Login extends React.Component {
 		this.setState({ [event.target.name]: event.target.value })
 	}
 
-	onSubmit = (event) => {
+	Submit = (event) => {
 		const user = this.state
-		event.preventDefault()
-		console.log('uuuuuuuuuuuuuuuuuu', event)
-		const verifyToken = localStorage.getItem('verifyToken')
-		axios.post('http://localhost:8080/auth/login', user).then((res) => {
-			console.log(res)
-			localStorage.setItem('Token', res.headers['x-access-Token'])
-			console.log('verifyToken', localStorage.getItem('verifyToken'))
-			axios.defaults.headers.common['Authorization'] = `Bearer ${verifyToken}`
+		// event.preventDefault()
+		// console.log('uuuuuuuuuuuuuuuuuu', event)
+		const verifyToken = localStorage.getItem('token')
+		axios.post('http://localhost:8080/auth/login', user).then((response) => {
+			localStorage.setItem('token', response.data.token)
 		})
 	}
 
@@ -36,36 +34,29 @@ class Login extends React.Component {
 		return (
 			<div className="body">
 				<Logononclick />
-				<form onSubmit={this.state}>
-					<TextField
-						onChange={this.handleChange}
-						floatingLabelText="Email"
-						name="email"
-						variant="raised"
-						color="primary"
-					/>
 
-					<br />
+				<TextField
+					onChange={this.handleChange}
+					floatingLabelText="Email"
+					name="email"
+					variant="raised"
+					color="primary"
+				/>
 
-					<TextField
-						onChange={this.handleChange}
-						type="password"
-						name="password"
-						hintText="Enter your Password"
-						floatingLabelText="Password"
-					/>
-					<br />
-					<RaisedButton
-						type="button"
-						onClick={this.onSubmit}
-						label="Connexion"
-						primary={true}
-						style={style}
-					/>
-					<Link to="/signup">
-						<RaisedButton label="Première connexion" primary={true} to="/signup" />
-					</Link>
-				</form>
+				<br />
+
+				<TextField
+					onChange={this.handleChange}
+					type="password"
+					name="password"
+					hintText="Enter your Password"
+					floatingLabelText="Password"
+				/>
+				<br />
+				<RaisedButton type="button" onClick={this.Submit} label="Connexion" primary={true} style={style} />
+				<Link to="/signup">
+					<RaisedButton label="Première connexion" primary={true} to="/signup" />
+				</Link>
 			</div>
 		)
 	}
