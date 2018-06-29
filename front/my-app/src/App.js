@@ -10,6 +10,7 @@ import Projets from './components/projets/Projets'
 import Profil from './components/profil/Profil'
 import Editprofil from './components/profil/editprofil'
 import CustomizedSnackbars from './components/login/alert'
+import Inscription from './components/inscription/Inscription'
 // 
 
 // Feuilles de style //
@@ -26,11 +27,11 @@ class App extends Component {
 			/*CALL ROUTES*/
 			<div className="App">
 				<Router>
-					<DetailProjet path="/detail-projet" />
 					<Login path="/login" />
 					<Signup path="/signup" />
 					<Projets path="/home" />
 					<Projet path="/projet" />
+					<Inscription path="/registration"/>
 					<Profil path="/profil" />
 					<Editprofil path="/editprofil" />
 				</Router>
