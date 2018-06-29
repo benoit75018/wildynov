@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import './App.css'
 import { Router } from '@reach/router'
+
+// Importations locales - Composants
 import Login from './components/login/Login'
 import Signup from './components/login/FirstConnexion'
 import Home from './Home'
@@ -9,6 +10,10 @@ import Projets from './components/projets/Projets'
 import Profil from './components/profil/Profil'
 import Editprofil from './components/profil/editprofil'
 import CustomizedSnackbars from './components/login/alert'
+// 
+
+// Feuilles de style //
+import './App.css'
 
 class App extends Component {
 	constructor(props) {
@@ -21,6 +26,7 @@ class App extends Component {
 			/*CALL ROUTES*/
 			<div className="App">
 				<Router>
+					<DetailProjet path="/detail-projet" />
 					<Login path="/login" />
 					<Signup path="/signup" />
 					<Projets path="/home" />

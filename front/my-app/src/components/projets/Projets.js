@@ -1,15 +1,18 @@
 import React, { Component } from 'react'
 
+// Material-UI //
 import { MuiThemeProvider, createMuiTheme, withStyles } from '@material-ui/core/styles'
 import Button from '@material-ui/core/Button'
 import TextField from '@material-ui/core/TextField'
 import Grid from '@material-ui/core/Grid'
 import PropTypes from 'prop-types'
 import axios from 'axios'
-import Block from './Block'
-// import '../projet/modalprovisoire.css'
 
-// import ResponsiveDialog from '../projet/modalform'
+// Importations locales //
+import Block from './Block'
+import '../projet/modalprovisoire.css'
+import ResponsiveDialog from '../projet/modalform'
+
 const theme = createMuiTheme({
 	palette: {
 		primary: {
