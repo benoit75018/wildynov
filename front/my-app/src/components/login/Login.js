@@ -6,7 +6,8 @@ import TextField from 'material-ui/TextField'
 import Logononclick from '../logo/Logononcliquable'
 import { Link } from '@reach/router'
 import axios from 'axios'
-
+import { Route, Redirect } from 'react-router'
+import Home from '../../Home'
 class Login extends React.Component {
 	constructor(props) {
 		super(props)
@@ -22,11 +23,12 @@ class Login extends React.Component {
 
 	Submit = (event) => {
 		const user = this.state
-		// event.preventDefault()
-		// console.log('uuuuuuuuuuuuuuuuuu', event)
+		const connexion = <Redirect to="/home" />
 
-		axios.post('http://localhost:8080/auth/login', user).then((response) => {
-			localStorage.setItem('token', response.data.token)
+		axios.post('http://localhost:8080/auth/login', user, connexion).then((response) => {
+			const token = response.headers['x-access-token']
+			console.log(response, token)
+			localStorage.setItem('token', token)
 		})
 	}
 
@@ -53,7 +55,9 @@ class Login extends React.Component {
 					floatingLabelText="Password"
 				/>
 				<br />
+
 				<RaisedButton type="button" onClick={this.Submit} label="Connexion" primary={true} style={style} />
+
 				<Link to="/signup">
 					<RaisedButton label="Première connexion" primary={true} to="/signup" />
 				</Link>

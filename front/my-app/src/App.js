@@ -24,7 +24,7 @@ class App extends Component {
 				<Router>
 					<Login path="/login" />
 					<Signup path="/signup" />
-					<Home path="/home" />
+					<Home exact path="/home" />
 					<Projet path="/projet" />
 					<Profil path="/profil" />
 					<Editprofil path="/editprofil" />

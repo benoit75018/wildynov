@@ -113,15 +113,15 @@ router.post('/login', [ check('email').isEmail() ], (req, res) => {
 					const token = jwt.sign(
 						{
 							email: results[0].email,
-							userID: results[0]._id
+							userID: results[0].id
 						},
-						process.env.SECRET_TOKEN,
+						process.env.SECRET_TOKEN || console.error('missing SECRET_TOKEN env variable!'),
 						{
 							expiresIn: '6h'
 						}
 					)
 					//////////////////////////
-					console.log(token)
+
 					res.header('Access-Control-Expose-Headers', 'x-access-token')
 					res.set('x-access-token', token)
 					res.status(200).send({
