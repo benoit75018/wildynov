@@ -54,7 +54,7 @@ connection.connect((error) => {
 	if (error) {
 		console.log(error)
 	} else {
-		console.log('Base de données connecté')
+		console.log('Base de données connectée')
 	}
 })
 
