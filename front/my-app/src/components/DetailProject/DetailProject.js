@@ -17,7 +17,8 @@ import FormLabel from '@material-ui/core/FormLabel';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import ButtonSizes from './bouton.js';
 import Paper from '@material-ui/core/Paper';
-
+import NavBar from '../AppBar'
+import Logo from '../logo/Logo'
 
 
 class DetailProject  extends Component {
@@ -30,30 +31,34 @@ constructor(props){
  
 render() {
     return (
-      <div>
-         <Typography variant="title" gutterBottom>
-              <br/>
-              <h5>Détail Du Project</h5>
-            </Typography>
-        <div className='test'>
-            <Grid container>
-                <Grid item xs={6} >
-                  <Membres/>
-                </Grid>
-                <Grid item  xs={6}>
-                  <EditionProject/>
-                </Grid>
-              </Grid>
-              <Grid container>
-                  <Grid item xs={12} md={12}>
-                    <SimpleCard/>
-                  </Grid>
-              </Grid>
           <div>
-          <ButtonSizes/>
+        <Logo />
+				<NavBar />
+          <div>
+            <Typography variant="title" gutterBottom>
+                  <br/>
+                  <h5>Détail Du Project</h5>
+                </Typography>
+            <div className='test'>
+                <Grid container>
+                    <Grid item xs={6} >
+                      <Membres/>
+                    </Grid>
+                    <Grid item  xs={6}>
+                      <EditionProject/>
+                    </Grid>
+                  </Grid>
+                  <Grid container>
+                      <Grid item xs={12} md={12}>
+                        <SimpleCard/>
+                      </Grid>
+                  </Grid>
+              <div>
+              <ButtonSizes/>
 
-          </div>
-      </div>  
+              </div>
+          </div>  
+        </div>
         </div>
     );
   }
