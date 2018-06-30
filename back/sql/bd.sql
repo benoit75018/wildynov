@@ -59,8 +59,7 @@ ENGINE = InnoDB;
 CREATE UNIQUE INDEX `email_UNIQUE` ON `projectynov`.`profile`
 (`email` ASC);
 
-CREATE UNIQUE INDEX `skill_UNIQUE` ON `projectynov`.`profile`
-(`skill` ASC);
+
 
 
 -- -----------------------------------------------------

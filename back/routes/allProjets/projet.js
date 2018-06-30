@@ -5,18 +5,20 @@ const connection = require('../../helpers/connect.js');
 
 
 ////////////Route pour ajouter un projet sur la page ajout projets ///////////
-router.post('/addProjet', (req, res) => {
+router.put('/addProjet', (req, res) => {
 
     const data = [
+
         req.body.title,
         req.body.deadline_project,
         req.body.deadline_application,
         req.body.description,
-        req.body.year
+    
     ]
 
+
     const INSERT_QUERY = `INSERT INTO project ( title, 
-        deadline_project, deadline_application, description) VALUES (?,?,?,?,?)`
+        deadline_project, deadline_application, description) VALUES (?,?,?,?)`//
 
     connection.query(INSERT_QUERY, data,
         (err, results) => {
