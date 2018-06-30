@@ -6,7 +6,6 @@ const verifToken = require('../../middleware/verifToken.js')
 
 router.put('/registration', (req, res) => {
  
-
         
       const name =   req.body.name
        const first_name =  req.body.first_name 
@@ -14,10 +13,6 @@ router.put('/registration', (req, res) => {
        const campus =  req.body.campus 
      const skill =    req.body.skill
       const email =   req.body.email
-    
-
-    
-                 
     
     connection.query(`UPDATE profile SET name=?,first_name=?,year=?,campus=?,skill=? where email=?`, [req.body.name, req.body.first_name, req.body.year, req.body.campus, req.body.skill, req.body.email], (err, results, fields) => {
         if (err) {
