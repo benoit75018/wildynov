@@ -25,11 +25,18 @@ router.get('/profile', verifToken, (req, res) => {
 
 //// Route pour modifier le profil ////
 
-router.get('/editprofil', verifToken, (req, res) => {
+router.put('/editprofile', verifToken, (req, res) => {
 
   const user = req.token.email
+  const data = {
+    "name": req.body.name, 
+    "first_name": req.body.first_name, 
+    "campus": req.body.campus,
+    "year": req.body.year, 
+    "skill": req.body.skill
+  }
 
-  connection.query('UPDATE * FROM profile WHERE email = ?', [user], function (selectError, results, fields) {
+  connection.query('UPDATE profile SET name = ?, first_name = ?, campus = ?, year = ?, skill = ? WHERE email = ?', [data, user], function (selectError, results, fields) {
     if (selectError) {
       res.send({
         "code": 400,
