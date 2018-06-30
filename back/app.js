@@ -38,7 +38,7 @@ app.use('/authadmin', adminRouter)
 app.use('/membresadmin', adminMember)
 app.use('/projetsadmin', adminProject)
 app.use('/auth', profilRouter)
-app.use('/auth', adminRouter)
+app.use('/auth', adminRouter) ///// WARNING !!! CHANGER LE NOM DE CETTE ROUTE ////
 
 ////////////Routes//////////////////////
 
@@ -51,7 +51,7 @@ connection.connect((error) => {
 	if (error) {
 		console.log(error)
 	} else {
-		console.log('Base de données connecté')
+		console.log('Base de données connectée')
 	}
 })
 
