@@ -12,6 +12,7 @@ import CardContent from '@material-ui/core/CardContent'
 import Button from '@material-ui/core/Button'
 // Le component "Divider" (équivalent au <hr />)
 import Divider from '@material-ui/core/Divider'
+import './block.css'
 
 class Block extends Component {
 	constructor(props) {
@@ -55,9 +56,9 @@ class Block extends Component {
 }
 
 const styles = {
-	card: {
-		width: 350,
-		height: 200
+	Card: {
+		width: 30,
+		height: 200,
 	},
 	title: {
 		// marginBottom: 16,

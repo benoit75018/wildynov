@@ -13,10 +13,12 @@ router.post('/addProjet', (req, res) => {
         req.body.deadline_project,
         req.body.deadline_application,
         req.body.description,
+        req.body.profile_id
     ]
-    console.log(data)
+
+
     const INSERT_QUERY = `INSERT INTO project ( title, 
-        deadline_project, deadline_application, description) VALUES ?,?,?,?,?`
+        deadline_project, deadline_application, description, profile_id) VALUES (?,?,?,?,?)`//
 
     connection.query(INSERT_QUERY, data,
         (err, results) => {
