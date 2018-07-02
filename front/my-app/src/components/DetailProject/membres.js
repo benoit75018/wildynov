@@ -52,75 +52,15 @@ function Membres(props) {
             </Typography> 
                 <Typography className={classes.pos} color="textSecondary">  
             </Typography>
-                <Input variant="mo"
-                placeholder="NOM"
-                className={classes.input}
-                inputProps={{
-                'aria-label': 'Description',
-                }}
-            />
-            <Input
-                placeholder="Prénom"
-                className={classes.input}
-                inputProps={{
-                'aria-label': 'Description',
-                }}
-            />
-                            <Input variant="mo"
-                placeholder="NOM"
-                className={classes.input}
-                inputProps={{
-                'aria-label': 'Description',
-                }}
-            />
-            <Input
-                placeholder="Prénom"
-                className={classes.input}
-                inputProps={{
-                'aria-label': 'Description',
-                }}
-            />                  <Input variant="mo"
-            placeholder="NOM"
-            className={classes.input}
-            inputProps={{
-            'aria-label': 'Description',
-            }}
-        />
-        <Input
-            placeholder="Prénom"
-            className={classes.input}
-            inputProps={{
-            'aria-label': 'Description',
-            }}
-        />
-                        <Input variant="mo"
-                placeholder="NOM"
-                className={classes.input}
-                inputProps={{
-                'aria-label': 'Description',
-                }}
-            />
-            <Input
-                placeholder="Prénom"
-                className={classes.input}
-                inputProps={{
-                'aria-label': 'Description',
-                }}
-            />
-                            <Input variant="mo"
-                placeholder="NOM"
-                className={classes.input}
-                inputProps={{
-                'aria-label': 'Description',
-                }}
-            />
-            <Input
-                placeholder="Prénom"
-                className={classes.input}
-                inputProps={{
-                'aria-label': 'Description',
-                }}
-            />          
+            <br/>
+            <p className="NOM">Nom: {NOBODY}</p>
+            <p className="Prenom"> Prénom: {Nobody}</p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+
+
         </CardContent>
       </Card>
     </div>
