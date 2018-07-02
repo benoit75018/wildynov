@@ -32,11 +32,10 @@ app.use(validator())
 
 ////////////ROUTING////////////////////////
 
-app.use('/auth', profilRouter)
+
 app.use('/projet', inProjetRouter)
 app.use('/projets', seeProjetRouter)
 app.use('/user', userRouter)
-app.use('/authadmin', adminRouter)
 app.use('/membresadmin', adminMember)
 app.use('/projetsadmin', adminProject)
 app.use('/auth', profilRouter)
