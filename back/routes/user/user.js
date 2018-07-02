@@ -25,7 +25,7 @@ router.get('/profile', verifToken, (req, res) => {
 
 //// Route pour modifier le profil ////
 
-router.get('/editprofil', verifToken, (req, res) => {
+router.put('/editprofil', verifToken, (req, res) => {
 
   const user = req.token.email
 
