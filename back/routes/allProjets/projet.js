@@ -8,15 +8,17 @@ const connection = require('../../helpers/connect.js');
 router.post('/addProjet', (req, res) => {
 
     const data = [
+
         req.body.title,
         req.body.deadline_project,
         req.body.deadline_application,
         req.body.description,
-        req.body.year
+        req.body.profile_id
     ]
 
+
     const INSERT_QUERY = `INSERT INTO project ( title, 
-        deadline_project, deadline_application, description) VALUES (?,?,?,?,?)`
+        deadline_project, deadline_application, description, profile_id) VALUES (?,?,?,?,?)`//
 
     connection.query(INSERT_QUERY, data,
         (err, results) => {
