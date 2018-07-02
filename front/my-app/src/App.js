@@ -9,7 +9,6 @@ import Projet from './components/projet/Projet'
 import Projets from './components/projets/Projets'
 import Profil from './components/profil/Profil'
 import Editprofil from './components/profil/editprofil'
-import CustomizedSnackbars from './components/login/alert'
 import LoginAdmin from './components/loginAdmin/LoginAdmin'
 import ClippedDrawer from './components/adminAllprojects/adminProjects'
 // import SimpleTable from './components/adminAllprojects/SimpleTable'
@@ -43,7 +42,7 @@ class App extends Component {
 					<ClippedDrawer path="/admin/home" />
 					{/* <SimpleTable path="/admin/projet" /> */}
 				</Router>
-				<CustomizedSnackbars />
+				
 			</div>
 		)
 	}

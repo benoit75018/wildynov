@@ -6,9 +6,11 @@ const userRouter = require('./routes/user/user.js')//
 const profilRouter = require('./routes/authcontrol/auth.js')//
 const inProjetRouter = require('./routes/allprojets/projet.js')//(Route ajouter un projet sur la page ajout projets)
 const seeProjetRouter = require('./routes/allprojets/projets.js')//(Route afficher les projets sur la page projet)
-const adminRouter = require('./routes/authcontrol/authAdmin.js')//
+const adminRouter = require('./routes/admin/authAdmin')//(Route connexion Admin)
 const adminMember = require('./routes/admin/membresadmin')//(Route pour afficher les membres sur la page Admin)
 const adminProject = require('./routes/admin/projetsadmin')//(Route pour afficher les projets sur la page Admin)
+const registrationUser = require('./routes/inscription/inscription')
+
 
 const connection = require('./helpers/connect.js')
 const cors = require('cors')
@@ -30,15 +32,15 @@ app.use(validator())
 
 ////////////ROUTING////////////////////////
 
-app.use('/auth', profilRouter)
+
 app.use('/projet', inProjetRouter)
 app.use('/projets', seeProjetRouter)
 app.use('/user', userRouter)
-app.use('/authadmin', adminRouter)
 app.use('/membresadmin', adminMember)
 app.use('/projetsadmin', adminProject)
 app.use('/auth', profilRouter)
-app.use('/auth', adminRouter) ///// WARNING !!! CHANGER LE NOM DE CETTE ROUTE ////
+app.use('/auth', adminRouter)
+app.use('/user', registrationUser)
 
 ////////////Routes//////////////////////
 

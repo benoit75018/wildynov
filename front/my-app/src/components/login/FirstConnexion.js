@@ -3,13 +3,13 @@ import RaisedButton from 'material-ui/RaisedButton'
 import TextField from 'material-ui/TextField'
 import Logononclick from '../logo/Logononcliquable'
 import axios from 'axios'
-import CustomizedSnackbars from './alert'
+
 class Signup extends React.Component {
 	constructor(props) {
 		super(props)
 		this.state = {
 			email: '',
-			message: <CustomizedSnackbars />
+			
 		}
 	}
 	handleChange = (event) => {
@@ -20,11 +20,11 @@ class Signup extends React.Component {
 	handleSubmit = (event) => {
 		this.state = {
 			email: '',
-			open: <CustomizedSnackbars />
+			
 		}
 		console.log('An email has been sent with an automatic password' + this.state.email)
 		event.preventDefault()
-		const open = <CustomizedSnackbars />
+		
 		console.log(this.state['email'])
 		axios
 			.post('http://localhost:8080/auth/signup', {
