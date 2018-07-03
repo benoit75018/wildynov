@@ -22,64 +22,62 @@ import Logo from '../logo/Logo'
 import axios from 'axios'
 
 class DetailProject  extends Component {
-constructor(props){
-  super(props);
-  // this.statresolve
-  this.state ={
-    project: []
-  }
-  
-  // descriptiresolve
-  name:''
+  constructor(props){
+    super(props);
+    // this.statresolve
+    this.state = {
+      project: []
+    }
+    
+    // descriptiresolve
+    // name:''
   };
- 
+  
   componentDidMount() {
     axios
     .get('http://localhost:8080/projets/showProjet/:detail')
     .then((response) => {
-    console.log('--response--', response.data.results)
-    this.setState({ project: response.data.results })
-    console.log('this.state.projects ', this.state.projects)
+      this.setState({ project: response.data.results })
     })
     .catch((err) => {
-    console.log('caught it!', err)
     })
-    }
+  }
 
-render() {
+  render() {
     return (
-          <div>
+      <div> {/* div 1 */}
         <Logo />
-				<NavBar />
-          <div>
-            <Typography variant="title" gutterBottom>
-                  <br/>
-                  <h5>Détail Du Project</h5>
-                </Typography>
-            <div className='test'>
+          <NavBar />
+            <div> {/* div 2 */}
+              <Typography variant="title" gutterBottom>
+                <br/>
+                <h5>Détail Du Project</h5>
+              </Typography>
+              <div className='test'> {/* div 'test' */}
                 <Grid container>
-                    <Grid item xs={6} >
-                      <Membres/>
-                    </Grid>
-                    <Grid item  xs={6}>
-                      <EditionProject/>
-                    </Grid>
+                  <Grid item xs={6} >
+                    <Membres/>
                   </Grid>
-                  <Grid container>
-                      <Grid item xs={12} md={12}>
-                        <SimpleCard/>
-                      </Grid>
+                  <Grid item  xs={6}>
+                    <EditionProject/>
                   </Grid>
-              <div>
-              <ButtonSizes/>
-
-              </div>
-          </div>  
-        </div>
-        </div>
+                </Grid> {/* Fin de Grid container */}
+                <Grid container>
+                  <Grid item xs={12} md={12}>
+                    <SimpleCard/>
+                  </Grid>
+                </Grid> {/* Fin de Grid container */}
+                <div>
+                  <ButtonSizes/>
+                </div>
+              </div> {/* Fin de div 'test' */}
+            </div> {/* Fin de div 2 */}
+      </div> // Fin de div 3
     );
   }
-}
+
+} // fin DetailProject
+
 export default DetailProject;
 
 
