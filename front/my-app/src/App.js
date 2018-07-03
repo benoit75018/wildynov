@@ -30,7 +30,7 @@ class App extends Component {
 			<div className="App">
 				<Router>
 					<DetailProject path="/detailproject" />
-					<Login path="/login" />
+					<Login path="/" />
 					<Signup path="/signup" />
 					<Home exact path="/home" />
 					<Projets path="/home" />
