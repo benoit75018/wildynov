@@ -9,6 +9,9 @@ import Typography from '@material-ui/core/Typography'
 import Divider from '@material-ui/core/Divider'
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
 import Button from '@material-ui/core/Button'
+import SimpleTable from './SimpleTable'
+import AppBarAdmin from './AppBarAdmin'
+import Logo from '../logo/Logo'
 
 const drawerWidth = 240
 
@@ -41,28 +44,10 @@ function ClippedDrawer(props) {
 	const { classes } = props
 
 	return (
-		<div className={classes.root}>
-			<AppBar position="absolute" className={classes.appBar}>
-				<Toolbar>
-					<Typography variant="title" color="inherit" noWrap>
-						Admin
-					</Typography>
-				</Toolbar>
-			</AppBar>
-			<Drawer
-				variant="permanent"
-				classes={{
-					paper: classes.drawerPaper
-				}}
-			>
-				<div className={classes.toolbar} />
-				<Button>Membres</Button>
-				<Button>Projets</Button>
-			</Drawer>
-			<main className={classes.content}>
-				<div className={classes.toolbar} />
-				<Typography noWrap>{}</Typography>
-			</main>
+		<div>
+			<Logo />
+			<AppBarAdmin />
+			<SimpleTable />
 		</div>
 	)
 }
