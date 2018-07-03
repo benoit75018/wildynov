@@ -60,31 +60,14 @@ function EditionProject (props) {
           <Typography className={classes.pos} color="textSecondary">
             
           </Typography>
+          <br/>
 
-          <Input variant="mo"
-        placeholder="Nom de l'auteur du projet"
-        className={classes.input}
-        inputProps={{
-          'aria-label': 'Description',
-        }}
-      />
-    <br/>
-       <Input
-        placeholder="Date de l'édition"
-        className={classes.input}
-        inputProps={{
-          'aria-label': 'Description',
-        }}
-      />
-    <br/>
-  <Input
-        placeholder="Date de vadilité"
-        className={classes.input}
-        inputProps={{
-          'aria-label': 'Description',
-        }}
-      />
-
+          <p classname="auteurDuProjetTitre">Nom de l'auteur du projet: {Mr Nobody}</p> 
+          <br/>
+          <p>Date de l'édition: {12345678}</p>
+      
+          <br/>
+          <p>Date de vadilité: {12345678}</p>
 
         </CardContent>
        

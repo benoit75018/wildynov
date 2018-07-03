@@ -38,27 +38,14 @@ function SimpleCard(props) {
       <Card className={classes.card}>
         <CardContent>
         <Typography variant="title" gutterBottom>
-        Nom du project
+        Description du Projet
       </Typography>
 
           <Typography>
-            <TextField
-          id="multiline-flexible"
-          label="Description Project"
-          multiline
-          rows="4"
-          // defaultValue="yolo"
-          // onChange={thiPasswords.handleChange('multiline')}
-          className='yolo'
-          margin="normal"
-        />
+           <p> Hac ex causa conlaticia stipe Valerius humatur ille Publicola et subsidiis amicorum mariti inops cum liberis uxor alitur Reguli et dotatur ex aerario filia Scipionis, cum nobilitas florem adultae virginis diuturnum absentia pauperis erubesceret patris.</p>
           </Typography>
-          <Typography className={classes.pos} color="textSecondary">
-            
-          </Typography>
-
-          
-         
+          <Typography className={classes.pos} color="textSecondary">  
+          </Typography>         
         </CardContent>
         
       </Card>

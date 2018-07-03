@@ -19,4 +19,36 @@ router.get('/projet', (req, res) => {
 	})
 })
 
+
+
+
+router.put('/projet', (req, res) => {
+
+
+	const title = req.body.title
+	const deadline_project = req.body.deadline_project
+	const deadline_application = req.body.deadline_application
+	const description = req.body.description
+	const profile_id = req.body.profile_id
+	
+
+	
+
+	connection.query(`UPDATE profile SET title=?,deadline_project=?,deadline_application=?,description=?,profile_id =? WHERE id=?`, [req.body.title, req.body.deadline_project, req.body.deadline_application, req.body.description, req.body.profile_id], (err, results, fields) => {
+		if (err) {
+			res.send(err);
+
+		} else {
+			return res.send({
+				results
+			})
+
+		}
+
+	});
+
+});
+
+
+
 module.exports = router
