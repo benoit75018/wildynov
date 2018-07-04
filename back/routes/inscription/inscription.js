@@ -4,7 +4,7 @@ const connection = require('../../helpers/connect.js');
 const verifToken = require('../../middleware/verifToken.js')
 
 
-router.put('/registration', (req, res) => {
+router.put('/registration', verifToken, (req, res) => {
  
         
     const name = req.body.name
