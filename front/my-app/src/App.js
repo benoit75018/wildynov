@@ -5,7 +5,7 @@ import { Router } from '@reach/router'
 import Home from './Home'
 import Login from './components/login/Login'
 import Signup from './components/login/FirstConnexion'
-import Projets from './components/projet/Projets'
+import Projets from './components/projets/Projets'
 import Profil from './components/profil/Profil'
 import Editprofil from './components/profil/editprofil'
 import LoginAdmin from './components/loginAdmin/LoginAdmin'
@@ -14,7 +14,7 @@ import SimpleTable from './components/adminAllprojects/SimpleTable'
 import Inscription from './components/inscription/Inscription'
 import DetailProject from './components/DetailProject/DetailProject'
 import Projetformulaire from './components/projet/formulaire.js'
-
+import DetailProfile from './components/profil/profilbis'
 // Feuilles de style //
 import './App.css'
 
@@ -41,6 +41,7 @@ class App extends Component {
 					<ClippedDrawer path="/admin/home" />
 					<SimpleTable path="/admin/projet" />
 					<Projetformulaire path="/addprojet" />
+					<DetailProfile path="/probilbis" />
 				</Router>
 			</div>
 		)
