@@ -42,9 +42,8 @@ class App extends Component {
 					<LoginAdmin path="/login/admin" />
 					<ClippedDrawer path="/admin/home" />
 					<SimpleTable path="/admin/projet" />
-					<Projetformulaire path="/formulaire"/>
+					<Projetformulaire path="/formulaire" />
 				</Router>
-				
 			</div>
 		)
 	}

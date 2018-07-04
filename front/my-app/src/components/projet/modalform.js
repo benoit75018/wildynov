@@ -7,7 +7,9 @@ import DialogTitle from '@material-ui/core/DialogTitle'
 import withMobileDialog from '@material-ui/core/withMobileDialog'
 import RaisedButton from 'material-ui/RaisedButton'
 import TextField from '@material-ui/core/TextField'
-import './modalprovisoire.css'
+
+import { MySnackbarContentWrapper } from '../login/alert'
+import Snackbar from '@material-ui/core/Snackbar'
 /*CREATE A MODAL WITH MATERIAL FOR A PROJECT FORM */
 class ResponsiveDialog extends React.Component {
 	state = {
@@ -39,44 +41,50 @@ class ResponsiveDialog extends React.Component {
 						onClose={this.handleClose}
 						aria-labelledby="responsive-dialog-title"
 					>
-						<DialogTitle className="title" id="responsive-dialog-title">
-							{'Nouveau Projet'}
-						</DialogTitle>
-
-						<form className="form">
-							<TextField
-								style={{ Color: '#00BCD4' }}
-								className="input"
-								id="date"
-								name="deadline_application"
-								label="candidature"
-								type="date"
-								defaultValue=""
-								InputLabelProps={{
-									shrink: true
-								}}
-							/>
-							<br />
-							<TextField
-								className="input"
-								id="date"
-								name="deadline_project"
-								label="fin du projet "
-								type="date"
-								defaultValue=""
-								InputLabelProps={{
-									shrink: true
-								}}
-							/>
-							<br />
-							<div>
+						<div className="title">
+							<DialogTitle className="title" id="responsive-dialog-title">
+								{'Nouveau Projet'}
+							</DialogTitle>
+						</div>
+						<div className="container">
+							<div classname="row1">
+								<br />
 								<TextField
+									onChange={this.handleChange}
+									style={{ Color: '#00BCD4' }}
+									className="input"
+									id="date"
+									name="deadline_application"
+									label="candidature"
+									type="date"
+									defaultValue=""
+									InputLabelProps={{
+										shrink: true
+									}}
+								/>
+								<br />
+								<TextField
+									onChange={this.handleChange}
+									className="input"
+									id="date"
+									name="deadline_project"
+									label="fin du projet "
+									type="date"
+									defaultValue=""
+									InputLabelProps={{
+										shrink: true
+									}}
+								/>
+								<br />
+
+								<TextField
+									onChange={this.handleChange}
 									style={{ Color: '#00BCD4' }}
 									className="input"
 									required
 									id="required"
 									multiline
-									rowsMax="3"
+									rowsMax="7"
 									value={this.state.title}
 									label="titre du projet"
 									defaultValue=""
@@ -85,39 +93,50 @@ class ResponsiveDialog extends React.Component {
 								/>
 							</div>
 
-							<div>
+							<div className="row2">
 								<TextField
-									style={{ labelColor: '#00BCD4' }}
-									className="input"
-									required
-									id="required"
+									onChange={this.handleChange}
+									id="multiline-static"
+									label="Multiline"
 									multiline
-									rowsMax="180"
+									rows="4"
 									value={this.state.description}
-									label="description du projet"
-									defaultValue=""
 									name="description"
+									defaultValue="Description du projet"
 									margin="normal"
 								/>
+								{/* <TextField
+						onChange={this.handleChange}
+						style={{ labelColor: '#00BCD4' }}
+						className="input"
+						required
+						id="required"
+						multiline
+						rowsMax="180"
+						value={this.state.description}
+						label="description du projet"
+						defaultValue=""
+						name="description"
+						margin="normal"
+					/>
+				</div> */}
 							</div>
-
 							<div>
-								<TextField
-									className="input"
-									required
-									id="required"
-									value={this.state.tag}
-									label="mots clés"
-									defaultValue="mots clés"
-									name="tag"
-									margin="normal"
-								/>
+								<Snackbar
+									anchorOrigin={{
+										vertical: 'top',
+										horizontal: 'right'
+									}}
+									open={this.state.displaySnack}
+									autoHideDuration={3}
+								>
+									<MySnackbarContentWrapper {...this.state.snack} onClose={this.handleClose} />
+								</Snackbar>
 							</div>
 							<br />
-						</form>
-
+						</div>
 						<DialogActions className="button">
-							<Button onClick={this.handleClose} color="primary">
+							<Button onClick={this.handleSubmit} color="primary">
 								Valider
 							</Button>
 						</DialogActions>

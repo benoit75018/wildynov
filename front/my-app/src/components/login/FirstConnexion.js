@@ -6,6 +6,7 @@ import axios from 'axios'
 import { MySnackbarContentWrapper } from './alert'
 import Snackbar from '@material-ui/core/Snackbar'
 import { Link } from '@reach/router'
+import { duration } from '@material-ui/core/styles/transitions'
 class Signup extends React.Component {
 	constructor(props) {
 		super(props)
@@ -48,7 +49,7 @@ class Signup extends React.Component {
 						message: 'Un email vous a été adressé avec un mot de passe !'
 					}
 
-					return this.setState({ snack, displaySnack: true }) //, window.location.reload('http://localhost:3000/login '))
+					return this.setState({ snack, displaySnack: true }), window.location.reload('http://localhost:3000')
 				}
 			})
 			.catch((err) => {
@@ -58,7 +59,10 @@ class Signup extends React.Component {
 						message: 'Email déjà enregistrer!'
 					}
 
-					return this.setState({ snack, displaySnack: true })
+					return (
+						this.setState({ snack, displaySnack: true }),
+						window.location.reload('http://localhost:3000/signup')
+					)
 				}
 			})
 		if (422) {

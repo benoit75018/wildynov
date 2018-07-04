@@ -2,16 +2,13 @@ import React, { Component } from 'react'
 
 // Material-UI //
 import { MuiThemeProvider, createMuiTheme, withStyles } from '@material-ui/core/styles'
-import Button from '@material-ui/core/Button'
-import TextField from '@material-ui/core/TextField'
+
 import Grid from '@material-ui/core/Grid'
 import PropTypes from 'prop-types'
 import axios from 'axios'
 
 // Importations locales //
 import Block from './Block'
-import '../projet/modalprovisoire.css'
-import ResponsiveDialog from '../projet/modalform'
 
 const theme = createMuiTheme({
 	palette: {
@@ -68,11 +65,7 @@ class Projets extends Component {
 				<div className={classes.root}>
 					<MuiThemeProvider theme={theme}>
 						{/*fonction onChange pour récupérer la valeur entrée dans le Textfield */}
-						<TextField hintText="Nom" floatingLabelText="Nom" onChange={this.updateFilter} />
-						<Button size="small" variant="raised" color="primary" className={classes.button1}>
-							Rechercher
-						</Button>
-						{/* <ResponsiveDialog /> */}
+
 						<br />
 						<br />
 						<br />
