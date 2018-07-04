@@ -44,7 +44,7 @@ class Block extends Component {
 							Voir +
 						</Button>
 					</Link> */}
-						<Button variant="contained" size="small" className={button} to="/detail-projet">
+						<Button variant="contained" size="small" className={button} to="./detailproject/:projectId">
 							Voir +
 						</Button>
 					</CardActions>
