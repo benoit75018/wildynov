@@ -44,30 +44,65 @@ const styles = theme => ({
   }
 });
 
+class EditionProject extends React.Component {
+  constructor(props){
+    super(props);
+    // this.statresolve
+    this.state = {
+      project: []
+    }}
+componentDidMount() {
+const projectTest = [
+{
+id: 1,
+title: 'gardiennage',
+deadline_project: '2017-08-19 12:17:55 -0400',
+deadline_application: '2018-08-19 12:17:55 -0400',
+description: 'hhhhhhmldjdcy hhhhhhmldjdcy hhhhhhmldjdcy hhhhhhmldjdcy hhhhhhmldjdcy hhhhhhmldjdcy',
+state: 1,
+created_at: '2017-08-19 12:17:55 -0400',
+updated: '2017-08-19 12:17:55 -0400',
+profile_id: 42
+}
+]
+EditionProject.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
+this.setState({project: projectTest})
 
-function EditionProject (props) {
-  const { classes } = props;
-  const bull = <span className={classes.bullet}>•</span>;
+// axios .get('http://localhost:8080/projets/showProjet/:detail')
+// .then((response) => { console.log('--response--', response.data.results)
+// this.setState({ project: response.data.results })
+// console.log('this.state.project ', this.state.project) }) .catch((err) => {
+// // <CardContent> <Typography variant="title" /> { console.log('caught it!',
+// err) } })
+}
+render() {
+  const EditionProject = this.state.project.map(e => e.deadline_project)
+
+  const EditionProject1 = this.state.project.map(e => e.deadline_application)
+  const EditionProject2 = this.state.project.map(e => e.created_at)
+  const EditionProject3 = this.state.project.map(e => e.profile_id)
+
 
   return (
     <div className="EditionProject">
-      <Card className={classes.card}>
+      <Card className={this.props.classes.card}>
         <CardContent>
         <Typography variant="title" gutterBottom>
         Edition du project
       </Typography>
           
-          <Typography className={classes.pos} color="textSecondary">
+          <Typography className={this.props.classes.pos} color="textSecondary">
             
           </Typography>
           <br/>
 
-          <p classname="auteurDuProjetTitre">Nom de l'auteur du projet: {Mr Nobody}</p> 
-          <br/>
-          <p>Date de l'édition: {12345678}</p>
-      
-          <br/>
-          <p>Date de vadilité: {12345678}</p>
+          <p>Nom de l'auteur du projet: {EditionProject3}</p> 
+          <p>Date de création: {EditionProject2}</p>
+          <p>Date de l'édition: {EditionProject}</p>
+          <p>Date de vadilité: {EditionProject1}</p>
+       
 
         </CardContent>
        
@@ -75,10 +110,8 @@ function EditionProject (props) {
     </div>
     
   );
-}
-EditionProject.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
+}}
+
 
 export default withStyles(styles)(EditionProject);
 

@@ -21,60 +21,83 @@ import NavBar from '../AppBar'
 import Logo from '../logo/Logo'
 import axios from 'axios'
 
+
+
 class DetailProject  extends Component {
 constructor(props){
   super(props);
   // this.statresolve
-  this.state ={
+  this.state = {
     project: []
   }
   
   // descriptiresolve
-  name:''
-  };
- 
-  componentDidMount() {
-    axios
-    .get('http://localhost:8080/projets/showProjet/:detail')
-    .then((response) => {
-    console.log('--response--', response.data.results)
-    this.setState({ project: response.data.results })
-    console.log('this.state.projects ', this.state.projects)
-    })
-    .catch((err) => {
-    console.log('caught it!', err)
-    })
-    }
+  // name:''
+  }
 
+  componentDidMount() {
+    const projectTest = [{
+      id: 1 ,
+      title: 'gardiennage',
+      deadline_project: '2017-08-19 12:17:55 -0400',
+      deadline_application: '2017-08-19 12:17:55 -0400',
+      description: 'je suis mort je veux mourir',
+      state: 1,       
+      created_at: '2017-08-19 12:17:55 -0400',
+      updated: '2017-08-19 12:17:55 -0400',
+      profile_id: 42
+    }]
+  this.setState(
+     { project: projectTest }
+  )
+ 
+}
+  // axios
+   // .get('http://localhost:8080/projets/showProjet/:detail')
+   // .then((response) => {
+   //   console.log('--response--', response.data.results)
+   //   this.setState({ project: response.data.results })
+   //   console.log('this.state.project ', this.state.project)
+   // })
+   // .catch((err) => {      
+   //     // <CardContent>
+   //     <Typography variant="title"  />
+   //    {
+   //      console.log('caught it!', err)
+   //    } 
+   // })
+  
 render() {
+  const infoProject = this.state.project.map(e => e.title)
     return (
-          <div>
+      <div>
         <Logo />
 				<NavBar />
           <div>
             <Typography variant="title" gutterBottom>
-                  <br/>
-                  <h5>Détail Du Project</h5>
-                </Typography>
-            <div className='test'>
-                <Grid container>
-                    <Grid item xs={6} >
-                      <Membres/>
-                    </Grid>
-                    <Grid item  xs={6}>
-                      <EditionProject/>
-                    </Grid>
-                  </Grid>
-                  <Grid container>
-                      <Grid item xs={12} md={12}>
-                        <SimpleCard/>
-                      </Grid>
-                  </Grid>
-              <div>
-              <ButtonSizes/>
+              <br/>
+              <h5>{infoProject}</h5>
+            </Typography>
+          <div className='test'>
 
-              </div>
-          </div>  
+          <Grid container>
+            <Grid item xs={6} >
+              <Membres results={this.state.project} />
+            </Grid>
+            <Grid item  xs={6}>
+              <EditionProject results={this.state.project} />
+            </Grid>
+          </Grid>
+                  
+          <Grid container>
+            <Grid item xs={12} md={12}>
+              <SimpleCard/>
+            </Grid>
+          </Grid>
+          <div>
+            <ButtonSizes/>
+          </div>
+        </div>  
         </div>
         </div>
     );

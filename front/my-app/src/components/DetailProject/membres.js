@@ -38,11 +38,14 @@ card:{
   }
 });
 
+
+
 function Membres(props) {
   const { classes } = props;
   const bull = <span className={classes.bullet}>•</span>;
   console.log(classes.card)
-
+  // console.log(props);
+  
   return (
     <div className="membres">
       <Card className={classes.card}>
@@ -53,8 +56,8 @@ function Membres(props) {
                 <Typography className={classes.pos} color="textSecondary">  
             </Typography>
             <br/>
-            <p className="NOM">Nom: {NOBODY}</p>
-            <p className="Prenom"> Prénom: {Nobody}</p>
+            <p className="NOM">Nom: {}</p>
+            <p className="Prenom"> Prénom: {}</p>
             <p></p>
             <p></p>
             <p></p>
