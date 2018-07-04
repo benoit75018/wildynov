@@ -3,14 +3,24 @@ import RaisedButton from 'material-ui/RaisedButton'
 import TextField from 'material-ui/TextField'
 import Logononclick from '../logo/Logononcliquable'
 import axios from 'axios'
-import CustomizedSnackbars from './alert'
+import { MySnackbarContentWrapper } from './alert'
+import Snackbar from '@material-ui/core/Snackbar'
+import { Link } from '@reach/router'
 class Signup extends React.Component {
 	constructor(props) {
 		super(props)
 		this.state = {
 			email: '',
-			message: <CustomizedSnackbars />
+			displaySnack: false,
+			snack: { variant: 'warning', message: '' }
 		}
+	}
+	handleClose = (reason) => {
+		if (reason === 'clickaway') {
+			return
+		}
+
+		this.setState({ displaySnack: false })
 	}
 	handleChange = (event) => {
 		console.log(event)
@@ -19,34 +29,53 @@ class Signup extends React.Component {
 
 	handleSubmit = (event) => {
 		this.state = {
-			email: '',
-			open: <CustomizedSnackbars />
+			email: ''
 		}
-		console.log('An email has been sent with an automatic password' + this.state.email)
+
+		// console.log('An email has been sent with an automatic password' + this.state.email)
 		event.preventDefault()
-		const open = <CustomizedSnackbars />
+
 		console.log(this.state['email'])
 		axios
 			.post('http://localhost:8080/auth/signup', {
 				email: event.target.email.value
 			})
-			.then(function(response) {
-				if (!response.ok) {
+			.then((response) => {
+				if (new Error()) {
+					console.log(response)
+					const snack = {
+						variant: 'success',
+						message: 'Un email vous a été adressé avec un mot de passe !'
+					}
+
+					return this.setState({ snack, displaySnack: true }) //, window.location.reload('http://localhost:3000/login '))
 				}
-				throw Error(response.statusText)
 			})
-			.then(function(response) {
-				console.log(response)
+			.catch((err) => {
+				if (err.message) {
+					const snack = {
+						variant: 'warning',
+						message: 'Email déjà enregistrer!'
+					}
+
+					return this.setState({ snack, displaySnack: true })
+				}
 			})
-			.catch(function(error) {
-				console.log(error)
-			})
+		if (422) {
+			const snack = {
+				variant: 'error',
+				message: 'Email non valide!'
+			}
+
+			return this.setState({ snack, displaySnack: true })
+		}
 	}
+
 	render() {
 		return (
 			<div>
 				<Logononclick />
-				<form onSubmit={this.handleSubmit}>
+				<form onSubmit={this.handleSubmit} className="form">
 					<TextField
 						// email={this.state.email}
 						onChange={this.handleChange}
@@ -56,9 +85,23 @@ class Signup extends React.Component {
 						variant="raised"
 						color="primary"
 					/>
+					<Snackbar
+						anchorOrigin={{
+							vertical: 'top',
+							horizontal: 'right'
+						}}
+						open={this.state.displaySnack}
+						autoHideDuration={3}
+					>
+						<MySnackbarContentWrapper {...this.state.snack} onClose={this.handleClose} />
+					</Snackbar>
+
 					<br />
 					<RaisedButton type="submit" label="Connexion" primary={true} style={style} />
 				</form>
+				<Link to="../">
+					<p>Vous avez déja un compte ? </p>
+				</Link>
 			</div>
 		)
 	}

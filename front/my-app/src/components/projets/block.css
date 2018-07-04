@@ -1,7 +1,16 @@
+/* This block of code used to work and did the same thing as the next block of code.
+In case the next one also fails, it serves as a fallback.
 div.MuiGrid-container-55 {
     width: 1500px;
+} */
+
+/* Size and margin of the block */
+#root > div > div:nth-child(1) > div > div.size1 > div > div.MuiGrid-container-169 > div {
+    width: 2000px;
+    margin-left: 30px;
 }
 
+/* Size of the main div containing the blocks */
 div.size1 {
  width: 100%;
 }
