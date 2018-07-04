@@ -11,10 +11,11 @@ import Profile from './components/profil/Profil'
 import Editprofil from './components/profil/editprofil'
 import LoginAdmin from './components/loginAdmin/LoginAdmin'
 import ClippedDrawer from './components/adminAllprojects/adminProjects'
-// import SimpleTable from './components/adminAllprojects/SimpleTable'
+import SimpleTable from './components/adminAllprojects/SimpleTable'
 import Inscription from './components/inscription/Inscription'
 import DetailProject from './components/DetailProject/DetailProject'
-import DetailProfile from './components/profil/profilbis'
+import Projetformulaire from './components/projet/formulaire.js'
+import DetailProfile from './components/profil/profilbis.js'
 
 // Feuilles de style //
 import './App.css'
@@ -31,7 +32,7 @@ class App extends Component {
 			<div className="App">
 				<Router>
 					<DetailProject path="/detailproject" />
-					<Login path="/login" />
+					<Login path="/" />
 					<Signup path="/signup" />
 					<Home exact path="/home" />
 					<Projets path="/home" />
@@ -41,7 +42,8 @@ class App extends Component {
 					<Editprofil path="/editprofil" />
 					<LoginAdmin path="/login/admin" />
 					<ClippedDrawer path="/admin/home" />
-					{/* <SimpleTable path="/admin/projet" /> */}
+					<SimpleTable path="/admin/projet" />
+					<Projetformulaire path="/formulaire" />
 				</Router>
 			</div>
 		)

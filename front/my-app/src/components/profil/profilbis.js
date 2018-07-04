@@ -22,27 +22,12 @@ import axios from 'axios'
 class DetailProfile extends Component {
 	constructor(props) {
 		super(props)
-		// this.statresolve
 		this.state = {
 			profile: []
 		}
-
-		// descriptiresolve
-		// name:''
 	}
 
 	componentDidMount() {
-		// 	const profileTest = [
-		// 		{
-		// 			id: 1,
-		// 			name: 'Jérot',
-		// 			first_name: 'Blandis',
-		// 			year: '02.02.2018',
-		// 			campus: 'Paris'
-		// 		}
-		// 	]
-		// 	this.setState({ profile: profileTest })
-		// }
 		axios
 			.get('http://localhost:8080/user/profile')
 			.then((response) => {
@@ -67,13 +52,13 @@ class DetailProfile extends Component {
 				<Logo />
 				<NavBar />
 				<div>
-					<Typography variant="title" gutterBottom>
+					{/* <Typography variant="title" gutterBottom>
 						<br />
-						<h5>{infoPro1}</h5>
-						{/* <h5>{infoPro2}</h5>
+						<h5>{infoPro1}</h5> */}
+					{/* <h5>{infoPro2}</h5>
 						<h5>{infoPro3}</h5>
-						<h5>{infoPro4}</h5> */}
-					</Typography>
+					<h5>{infoPro4}</h5> */}
+					{/* </Typography> */}
 				</div>
 			</div>
 		)
@@ -81,3 +66,15 @@ class DetailProfile extends Component {
 }
 
 export default DetailProfile
+
+// 	const profileTest = [
+// 		{
+// 			id: 1,
+// 			name: 'Jérot',
+// 			first_name: 'Blandis',
+// 			year: '02.02.2018',
+// 			campus: 'Paris'
+// 		}
+// 	]
+// 	this.setState({ profile: profileTest })
+// }
