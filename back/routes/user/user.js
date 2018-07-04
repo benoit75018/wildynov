@@ -26,7 +26,7 @@ router.get('/profile', verifToken, (req, res) => {
 
 router.put('/editprofile', verifToken, (req, res) => {
 	const email = req.token.email
-	// const email = 'monemail3.gmail.com' // todo: rm
+
 
 	const data = {
 		name: req.body.name,

@@ -18,6 +18,8 @@ router.get('/showProjet', (req, res) => {
   })
 })
 
+
+///////////Route pour afficher un seul projet sur la page details projet////////////////////////////
 router.get('/showProjetDetails/:id', (req, res) => {
   const SELECT_QUERY = `
     SELECT
@@ -40,4 +42,33 @@ router.get('/showProjetDetails/:id', (req, res) => {
   })
 })
 
+
+
+
+///////////Route pour joindre un projet sur la page details projet////////////////////////////
+
+// router.put('/ProjetJoin', verifToken, (req, res) => {
+//   connection.query(`
+//   UPDATE project
+//   SET title=?,
+//       profile_id=?,
+//       deadline_project=?,
+//       deadline_application=?,
+//       description=?`, [
+//       req.body.title,
+//       req.token.userID,
+//       req.body.deadline_project,
+//       req.body.deadline_application,
+//       req.body.description,
+//   ], (err, results) => {
+//       if (err) {
+//           res.send(err);
+//       } else {
+//           return res.send({
+//               results
+//           })
+//       }
+//   })
+
 module.exports = router
+
