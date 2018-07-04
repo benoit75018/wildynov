@@ -8,7 +8,7 @@ import PropTypes from 'prop-types'
 import axios from 'axios'
 
 // Importations locales //
-import Block from './Block'
+import Block from '../projets/Block'
 
 const theme = createMuiTheme({
 	palette: {

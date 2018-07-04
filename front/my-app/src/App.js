@@ -14,7 +14,6 @@ import SimpleTable from './components/adminAllprojects/SimpleTable'
 import Inscription from './components/inscription/Inscription'
 import DetailProject from './components/DetailProject/DetailProject'
 import Projetformulaire from './components/projet/formulaire.js'
-import DetailProfile from './components/profil/profilbis'
 // Feuilles de style //
 import './App.css'
 
@@ -41,7 +40,7 @@ class App extends Component {
 					<ClippedDrawer path="/admin/home" />
 					<SimpleTable path="/admin/projet" />
 					<Projetformulaire path="/addprojet" />
-					<DetailProfile path="/probilbis" />
+					<DetailProject path="/detailproject/:projectId" />
 				</Router>
 			</div>
 		)

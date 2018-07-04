@@ -9,6 +9,7 @@ import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
 import Input from '@material-ui/core/Input';
 import withTheme from '@material-ui/core/styles/withTheme';
+import axios from 'axios'
 
 
 //import AccountCircle from '@material-ui/icons/AccountCircle';
@@ -44,47 +45,50 @@ const styles = theme => ({
   }
 });
 
+class EditionProject extends React.Component {
+  constructor(props){
+    super(props);
+    // this.statresolve
+    this.state = {
+      project: []
+    }}
+componentDidMount() {
 
-function EditionProject (props) {
-  const { classes } = props;
-  const bull = <span className={classes.bullet}>•</span>;
+axios 
+.get('http://localhost:8080/projets/showProjet/:detail')
+.then((response) => { console.log('--response--', response.data.results)
+this.setState({ project: response.data.results })
+console.log('this.state.project ', this.state.project) })
+ .catch((err) => {
+  // <CardContent> <Typography variant="title" /> { console.log('caught it!',
+  console.log(err)}) 
+  }
+
+render() {
+  const EditionProject = this.state.project.map(e => e.deadline_project)
+  const EditionProject1 = this.state.project.map(e => e.deadline_application)
+  const EditionProject2 = this.state.project.map(e => e.created_at)
+  const EditionProject3 = this.state.project.map(e => e.profile_id)
+
 
   return (
     <div className="EditionProject">
-      <Card className={classes.card}>
+      <Card className={this.props.classes.card}>
         <CardContent>
         <Typography variant="title" gutterBottom>
         Edition du project
       </Typography>
           
-          <Typography className={classes.pos} color="textSecondary">
+          <Typography className={this.props.classes.pos} color="textSecondary">
             
           </Typography>
+          <br/>
 
-          <Input variant="mo"
-        placeholder="Nom de l'auteur du projet"
-        className={classes.input}
-        inputProps={{
-          'aria-label': 'Description',
-        }}
-      />
-    <br/>
-       <Input
-        placeholder="Date de l'édition"
-        className={classes.input}
-        inputProps={{
-          'aria-label': 'Description',
-        }}
-      />
-    <br/>
-  <Input
-        placeholder="Date de vadilité"
-        className={classes.input}
-        inputProps={{
-          'aria-label': 'Description',
-        }}
-      />
-
+          <p>Nom de l'auteur du projet: {EditionProject3}</p> 
+          <p>Date de création: {EditionProject2}</p>
+          <p>Date de l'édition: {EditionProject}</p>
+          <p>Date de vadilité: {EditionProject1}</p>
+       
 
         </CardContent>
        
@@ -93,9 +97,8 @@ function EditionProject (props) {
     
   );
 }
-EditionProject.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
+}
+
 
 export default withStyles(styles)(EditionProject);
 

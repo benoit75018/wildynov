@@ -36,3 +36,19 @@
     background-color: rgb(173, 184, 186);
     margin: 10px;
 }
+
+.nom{
+display: inline;
+}
+
+.prenom{
+display: inline;
+}
+
+.auteurDuProjet{
+    display: inline;
+}
+
+.auteurDuProjetTitre{
+    display: inline;
+}
