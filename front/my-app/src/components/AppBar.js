@@ -52,7 +52,7 @@ class MenuAppBar extends React.Component {
 					<Toolbar>
 						<Typography variant="title" color="inherit" className={classes.flex} />
 
-						<Button color="inherit" href="/formulaire">
+						<Button color="inherit" href="/addprojet">
 							Proposez un projet
 						</Button>
 

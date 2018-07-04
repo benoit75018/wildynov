@@ -1,6 +1,5 @@
 import React from 'react'
 
-import { createMuiTheme } from '@material-ui/core/styles'
 import './Profils.css'
 import Button from '@material-ui/core/Button'
 

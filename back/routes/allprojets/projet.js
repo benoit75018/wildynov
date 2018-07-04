@@ -11,15 +11,14 @@ router.post('/addProjet', verifToken, (req, res) => {
     connection.query(`
     INSERT INTO project
     SET title=?,
-        profile_id=?,
         deadline_project=?,
         deadline_application=?,
         description=?`, [
         req.body.title,
-        req.token.userID,
         req.body.deadline_project,
         req.body.deadline_application,
         req.body.description,
+        req.token.userID,
     ], (err, results) => {
         if (err) {
             res.send(err);
@@ -31,4 +30,13 @@ router.post('/addProjet', verifToken, (req, res) => {
 
     })
 })
+
+
+
+
+
+
+
+
+
 module.exports = router;

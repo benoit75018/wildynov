@@ -5,8 +5,7 @@ export default StyleSheet.create({
     'textAlign': 'center'
   },
   'nav': {
-    'padding': [{ 'unit': 'px', 'value': 60 }, { 'unit': 'px', 'value': 60 }, { 'unit': 'px', 'value': 60 }, { 'unit': 'px', 'value': 60 }],
-    'border': [{ 'unit': 'string', 'value': 'none' }]
+    'padding': [{ 'unit': 'px', 'value': 60 }, { 'unit': 'px', 'value': 60 }, { 'unit': 'px', 'value': 60 }, { 'unit': 'px', 'value': 60 }]
   },
   'nav-wrapper': {
     'padding': [{ 'unit': 'px', 'value': 0 }, { 'unit': 'px', 'value': 0 }, { 'unit': 'px', 'value': 0 }, { 'unit': 'px', 'value': 0 }]
