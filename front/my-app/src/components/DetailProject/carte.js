@@ -9,6 +9,7 @@ import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
 import Input from '@material-ui/core/Input';
 import withTheme from '@material-ui/core/styles/withTheme';
+import axios from 'axios'
 
 const styles = {
 card: {
@@ -37,30 +38,20 @@ class SimpleCard extends React.Component {
       project: []
     }}
 componentDidMount() {
-const projectTest = [
-{
-id: 1,
-title: 'gardiennage',
-deadline_project: '2017-08-19 12:17:55 -0400',
-deadline_application: '2017-08-19 12:17:55 -0400',
-description: 'hhhhhhmldjdcy hhhhhhmldjdcy hhhhhhmldjdcy hhhhhhmldjdcy hhhhhhmldjdcy hhhhhhmldjdcy',
-state: 1,
-created_at: '2017-08-19 12:17:55 -0400',
-updated: '2017-08-19 12:17:55 -0400',
-profile_id: 42
-}
-]
+
 SimpleCard.propTypes = {
   classes: PropTypes.object.isRequired
   };
-this.setState({project: projectTest})
 
-// axios .get('http://localhost:8080/projets/showProjet/:detail')
-// .then((response) => { console.log('--response--', response.data.results)
-// this.setState({ project: response.data.results })
-// console.log('this.state.project ', this.state.project) }) .catch((err) => {
-// // <CardContent> <Typography variant="title" /> { console.log('caught it!',
-// err) } })
+
+axios 
+.get('http://localhost:8080/projets/showProjet/:detail')
+.then((response) => { console.log('--response--', response.data)
+this.setState({ project: response.data})
+console.log('this.state.project ', this.state.project) }) 
+.catch((err) => {
+// <CardContent> <Typography variant="title" /> { console.log('caught it!',
+console.log(err)}) 
 }
 render() {
   const infoProject = this.state.project.map(e => e.description)
@@ -94,8 +85,6 @@ erubesceret patris.</p> */}
 
 );
 }
-
-
 
 }
 
