@@ -14,6 +14,7 @@ import ClippedDrawer from './components/adminAllprojects/adminProjects'
 // import SimpleTable from './components/adminAllprojects/SimpleTable'
 import Inscription from './components/inscription/Inscription'
 import DetailProject from './components/DetailProject/DetailProject'
+import DetailProfile from './components/profil/profilbis'
 
 // Feuilles de style //
 import './App.css'
@@ -36,7 +37,7 @@ class App extends Component {
 					<Projets path="/home" />
 					<Projet path="/projet" />
 					<Inscription path="/registration" />
-					<Profile path="/profil" />
+					<DetailProfile path="/profil" />
 					<Editprofil path="/editprofil" />
 					<LoginAdmin path="/login/admin" />
 					<ClippedDrawer path="/admin/home" />

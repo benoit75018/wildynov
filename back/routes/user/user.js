@@ -9,7 +9,7 @@ const verifToken = require('../../middleware/verifToken.js')
 
 router.get('/profile', verifToken, (req, res) => {
 	const user = req.token.email
-
+	// console.log(req.token.email)
 	connection.query('SELECT * FROM profile WHERE email = ?', [ user ], (selectError, results, fields) => {
 		if (selectError) {
 			res.send({
