@@ -18,7 +18,7 @@ router.get('/profile', verifToken, (req, res) => {
 			})
 		} else results
 		// lodash _.pick (npm for select some to data to inject in the front )
-    res.status(200).json(_.pick(results[0], [ 'name', 'first_name', 'campus', 'year', 'skill' ]))
+		res.status(200).json(_.pick(results[0], [ 'name', 'first_name', 'campus', 'year', 'skill' ]))
 	})
 })
 
@@ -27,7 +27,6 @@ router.get('/profile', verifToken, (req, res) => {
 router.put('/editprofile', verifToken, (req, res) => {
 	const email = req.token.email
 
-
 	const data = {
 		name: req.body.name,
 		first_name: req.body.first_name,
@@ -35,6 +34,8 @@ router.put('/editprofile', verifToken, (req, res) => {
 		year: req.body.year,
 		skill: req.body.skill
 	}
+
+	console.log('ich been here')
 
 	connection.query(
 		'UPDATE profile SET name = ?, first_name = ?, campus = ?, year = ?, skill = ? WHERE email = ?',
@@ -49,7 +50,7 @@ router.put('/editprofile', verifToken, (req, res) => {
 			} else {
 				// lodash _.pick (npm for select some to data to inject in the front )
 				const r = _.pick(results[0], [ 'name', 'first_name', 'campus', 'year', 'skill' ])
-				res.status(200)
+				res.json(r)
 			}
 		}
 	)

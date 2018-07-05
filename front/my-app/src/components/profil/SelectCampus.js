@@ -28,7 +28,7 @@ class SelectsCampus extends React.Component {
 	}
 
 	handleChange = (campus) => (event) => {
-		this.setState({ [campus]: event.target.value })
+		this.setState({ [event.target.name]: event.target.value })
 	}
 
 	render() {
@@ -37,15 +37,17 @@ class SelectsCampus extends React.Component {
 		return (
 			<div>
 				<MuiThemeProvider>
-					<FormControl className={classes.formControl}>
+					<FormControl className={classes.formControl} name="campus">
 						<InputLabel htmlFor="campus-native-helper">Campus</InputLabel>
 						<NativeSelect
+							onChange={this.handleChange}
+							name="campus"
 							value={this.state.campus}
 							onChange={this.handleChange('campus')}
 							input={<Input name="campus" id="campus-native-helper" />}
 						>
 							<option value="" />
-							<option value={10}>Ingésup</option>
+							<option value={10}>Ingésup </option>
 							<option value={20}>Ecole Design</option>
 							<option value={30}>Ecole de Commerce</option>
 						</NativeSelect>

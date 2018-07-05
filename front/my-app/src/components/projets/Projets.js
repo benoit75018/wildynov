@@ -33,7 +33,11 @@ class Projets extends Component {
 
 	componentDidMount() {
 		axios
-			.get('http://localhost:8080/projets/showProjet')
+			.get('http://localhost:8080/projets/showProjet', {
+				headers: {
+					'x-access-token': localStorage.getItem('token')
+				}
+			})
 			.then((response) => {
 				console.log('--response--', response.data.results)
 				this.setState({ projects: response.data.results })

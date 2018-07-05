@@ -9,7 +9,7 @@ import axios from 'axios'
 
 // Importations locales //
 import Block from './Block'
-
+import RecipeReviewCard from './blockpro'
 const theme = createMuiTheme({
 	palette: {
 		primary: {
@@ -81,6 +81,7 @@ class Projets extends Component {
 										<Block title={project.title} description={project.description} />
 										{/* <div>{project.title}</div>
 										<div>{project.description}</div> */}
+										<RecipeReviewCard />
 									</Grid>
 								)
 							})}
