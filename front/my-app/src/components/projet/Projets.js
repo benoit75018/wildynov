@@ -55,11 +55,7 @@ class Projets extends Component {
 	render() {
 		const { classes } = this.props
 
-		// Projets.map( (i) => {
-		// return (
-		//   < Block
-		//   title={Projets[i].title} description={Projets[i].description}
-		//   />
+		
 		return (
 			<div className="size1">
 				<div className={classes.root}>
@@ -72,13 +68,10 @@ class Projets extends Component {
 						<Grid container>
 							{// NB: pour moi, "Projects" signifie tous les projets. L'argument "project" représente chacun des projets (chaque projet, individuellement); tandis que "i" représente chaque propriété/clef à l'intérieur de chaque projet...
 							this.state.projects.map((project) => {
-								{
-									console.log('it works!')
-								}
-
+								
 								return (
 									<Grid item xs={12} md={6} lg={3}>
-										<Block title={project.title} description={project.description} />
+										<Block {...project} />
 										{/* <div>{project.title}</div>
 										<div>{project.description}</div> */}
 										<RecipeReviewCard />

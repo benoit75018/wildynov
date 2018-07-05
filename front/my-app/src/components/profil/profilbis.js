@@ -1,9 +1,14 @@
 import React, { Component } from 'react'
+<<<<<<< HEAD
 
 // import TextField from 'material-ui/TextField';
 
 import Typography from '@material-ui/core/Typography'
 
+=======
+// import TextField from 'material-ui/TextField';
+import Typography from '@material-ui/core/Typography'
+>>>>>>> 5c93ebed11db8ac363477d1acb97569c9acf6d4c
 import NavBar from '../AppBar'
 import Logo from '../logo/Logo'
 import axios from 'axios'
@@ -17,7 +22,7 @@ class DetailProfile extends Component {
 	}
 
 	componentDidMount() {
-		console.log('nique ta mere')
+		
 		axios
 			.get('http://localhost:8080/user/profile')
 			.then((response) => {

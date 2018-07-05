@@ -6,7 +6,6 @@ import axios from 'axios'
 import { MySnackbarContentWrapper } from './alert'
 import Snackbar from '@material-ui/core/Snackbar'
 import { Link } from '@reach/router'
-import { duration } from '@material-ui/core/styles/transitions'
 class Signup extends React.Component {
 	constructor(props) {
 		super(props)

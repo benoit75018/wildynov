@@ -14,7 +14,6 @@ class Home extends React.Component {
 		return (
 			<div>
 				<Logo />
-
 				<NavBar />
 				<Projets />
 			</div>
