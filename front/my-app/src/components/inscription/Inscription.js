@@ -20,14 +20,30 @@ class Inscription extends React.Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			first_name: '',
-         	name: '',
-			campus: '',
-			promo: '',
-			skill: ''
+			profile= [
+				first_name: '',
+				name: '',
+			   campus: '',
+			   promo: '',
+			   skill: ''
+			]
 		}
 	}
 
+	componentDidMount() {
+		axios
+			.post('http://localhost:8080/user/profile')
+			.then((response) => {
+				console.log('--response--', response.data.results)
+				// this.setState({ profile: response.data.results })
+				this.setState({ profile: response.data.results})
+				
+				console.log('this.state.projects ', this.state.profile.name)
+			})
+			.catch((err) => {
+				console.log('caught it!', err)
+			})
+	}
 	render() {
 		return (
 		

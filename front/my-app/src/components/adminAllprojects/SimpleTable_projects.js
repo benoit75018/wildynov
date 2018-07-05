@@ -34,12 +34,27 @@ function getSorting(order, orderBy) {
 }
 
 const columnData = [
-  { id: "first_name", numeric: false, disablePadding: true, label: "Nom" },
-  { id: "name", numeric: false, disablePadding: true, label: "Prénom" },
-  { id: "email", numeric: false, disablePadding: true, label: "Email" },
-  { id: "campus", numeric: false, disablePadding: true, label: "Campus" },
-  { id: "year", numeric: false, disablePadding: true, label: "Promo" },
-  { id: "skill", numeric: false, disablePadding: true, label: "Compétences" }
+  { id: "title", numeric: false, disablePadding: true, label: "Titre" },
+  {
+    id: "deadline_project",
+    numeric: false,
+    disablePadding: true,
+    label: "Date de fin"
+  },
+  {
+    id: "deadline_application",
+    numeric: false,
+    disablePadding: true,
+    label: "Fin candidature"
+  },
+  { id: "created_at", numeric: false, disablePadding: true, label: "Creation" },
+  {
+    id: "updated_at",
+    numeric: false,
+    disablePadding: true,
+    label: "Mise à jour"
+  },
+  { id: "state", numeric: false, disablePadding: true, label: "Etat" }
 ]
 
 class EnhancedTableHead extends React.Component {
@@ -147,7 +162,7 @@ let EnhancedTableToolbar = props => {
           </Typography>
         ) : (
           <Typography variant="title" id="tableTitle">
-            Membres
+            Projets des étudiants
           </Typography>
         )}
       </div>
@@ -194,7 +209,7 @@ const styles = theme => ({
   }
 })
 
-class SimpleTable extends React.Component {
+class SimpleTable_pro extends React.Component {
   constructor(props) {
     super(props)
 
@@ -202,7 +217,7 @@ class SimpleTable extends React.Component {
       order: "asc",
       orderBy: "calories",
       selected: [],
-      member: [],
+      project: [],
       page: 0,
       rowsPerPage: 5
     }
@@ -211,11 +226,11 @@ class SimpleTable extends React.Component {
   componentDidMount() {
     console.log("bonsoir")
     axios
-      .get("http://localhost:8080/membresadmin/membres")
+      .get("http://localhost:8080/projetsadmin/projet")
       .then(response => {
         console.log("--response--", response.data.results)
-        this.setState({ member: response.data.results })
-        console.log("this.state.member ", this.state.member.name)
+        this.setState({ project: response.data.results })
+        console.log("this.state.project ", this.state.project)
       })
       .catch(err => {
         {
@@ -276,9 +291,9 @@ class SimpleTable extends React.Component {
 
   render() {
     const { classes } = this.props
-    const { member, order, orderBy, selected, rowsPerPage, page } = this.state
+    const { project, order, orderBy, selected, rowsPerPage, page } = this.state
     const emptyRows =
-      rowsPerPage - Math.min(rowsPerPage, member.length - page * rowsPerPage)
+      rowsPerPage - Math.min(rowsPerPage, project.length - page * rowsPerPage)
 
     return (
       <Paper className={classes.root}>
@@ -291,10 +306,10 @@ class SimpleTable extends React.Component {
               orderBy={orderBy}
               onSelectAllClick={this.handleSelectAllClick}
               onRequestSort={this.handleRequestSort}
-              rowCount={member.length}
+              rowCount={project.length}
             />
             <TableBody>
-              {member.map(n => {
+              {project.map(n => {
                 const isSelected = this.isSelected(n.id)
                 return (
                   <TableRow
@@ -311,16 +326,22 @@ class SimpleTable extends React.Component {
                     </TableCell>
 
                     <TableCell component="th" scope="row" padding="none">
-                      {n.name}
+                      {n.title}
                     </TableCell>
                     <TableCell component="th" scope="row" padding="none">
-                      {n.first_name}
+                      {n.deadline_project}
                     </TableCell>
                     <TableCell component="th" scope="row" padding="none">
-                      {n.campus}
+                      {n.deadline_application}
                     </TableCell>
                     <TableCell component="th" scope="row" padding="none">
-                      {n.year}
+                      {n.created_at}
+                    </TableCell>
+                    <TableCell component="th" scope="row" padding="none">
+                      {n.updated_at}
+                    </TableCell>
+                    <TableCell component="th" scope="row" padding="none">
+                      {n.state}
                     </TableCell>
                   </TableRow>
                 )
@@ -335,7 +356,7 @@ class SimpleTable extends React.Component {
         </div>
         <TablePagination
           component="div"
-          count={member.length}
+          count={project.length}
           rowsPerPage={rowsPerPage}
           page={page}
           backIconButtonProps={{
@@ -352,8 +373,8 @@ class SimpleTable extends React.Component {
   }
 }
 
-SimpleTable.propTypes = {
+SimpleTable_pro.propTypes = {
   classes: PropTypes.object.isRequired
 }
 
-export default withStyles(styles)(SimpleTable)
+export default withStyles(styles)(SimpleTable_pro)
