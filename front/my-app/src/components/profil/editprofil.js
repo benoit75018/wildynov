@@ -68,7 +68,6 @@ class Editprofil extends React.Component {
 	}
 
 	render() {
-		const { classes } = this.props
 		return (
 			<div>
 				<Logo />
@@ -166,22 +165,6 @@ class Editprofil extends React.Component {
 			</div>
 		)
 	}
-}
-const styles = (theme) => ({
-	root: {
-		display: 'flex',
-		flexWrap: 'wrap'
-	},
-	formControl: {
-		margin: theme.spacing.unit,
-		minWidth: 260
-	},
-	selectEmpty: {
-		marginTop: theme.spacing.unit * 2
-	}
-})
-const style = {
-	margin: 15
 }
 
 export default Editprofil

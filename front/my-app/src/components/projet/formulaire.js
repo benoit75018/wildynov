@@ -63,7 +63,6 @@ class Projetformulaire extends React.Component {
 				<NavBar />
 				<div className="titles">
 					<DialogTitle className="title">{'Nouveau Projet'}</DialogTitle>
-					<h1 Nouveau projet />
 				</div>
 				<div className="container">
 					<div classname="row1">

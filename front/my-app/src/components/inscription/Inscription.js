@@ -28,8 +28,13 @@ class Inscription extends React.Component {
 			/*FRONT OF THIS PAGE */
 
 			<div>
-				<a href="#" linkButton={true} href="/home" class="brand-logo center">
-					{<img src="https://image.noelshack.com/fichiers/2018/24/3/1528883121-webp-net-resizeimage.png" />}
+				<a linkButton={true} href="/home" class="brand-logo center">
+					{
+						<img
+							src="https://image.noelshack.com/fichiers/2018/24/3/1528883121-webp-net-resizeimage.png"
+							alt="logo"
+						/>
+					}
 				</a>
 				<NavBar />
 
