@@ -1,27 +1,28 @@
-import React, { Component } from 'react'
-import { Router } from '@reach/router'
+import React, { Component } from "react"
+import { Router } from "@reach/router"
 
 // Importations locales - Composants
-import Home from './Home'
-import Login from './components/login/Login'
-import Signup from './components/login/FirstConnexion'
-import Projets from './components/projets/Projets'
-import Profil from './components/profil/Profil'
-import Editprofil from './components/profil/editprofil'
-import LoginAdmin from './components/loginAdmin/LoginAdmin'
-import ClippedDrawer from './components/adminAllprojects/adminProjects'
-import SimpleTable from './components/adminAllprojects/SimpleTable'
-import Inscription from './components/inscription/Inscription'
-import DetailProject from './components/DetailProject/DetailProject'
-import Projetformulaire from './components/projet/formulaire.js'
+import Home from "./Home"
+import Login from "./components/login/Login"
+import Signup from "./components/login/FirstConnexion"
+import Projets from "./components/projets/Projets"
+import Profil from "./components/profil/Profil"
+import Editprofil from "./components/profil/editprofil"
+import LoginAdmin from "./components/loginAdmin/LoginAdmin"
+import ClippedDrawer from "./components/adminAllprojects/adminProjects"
+import SimpleTable from "./components/adminAllprojects/SimpleTable"
+// import Inscription from './components/inscription/Inscription'
+import DetailProject from "./components/DetailProject/DetailProject"
+import Projetformulaire from "./components/projet/formulaire.js"
 // Feuilles de style //
-import './App.css'
+import "./App.css"
 
 class App extends Component {
-	constructor(props) {
-		super(props)
-		this.state = {}
-	}
+  constructor(props) {
+    super(props)
+    this.state = {}
+  }
+
 
 	render() {
 		return (

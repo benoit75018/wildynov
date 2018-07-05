@@ -5,13 +5,15 @@ import NavBar from '../AppBar'
 import Logo from '../logo/Logo'
 import axios from 'axios'
 
+
 class DetailProfile extends Component {
-	constructor(props) {
-		super(props)
-		this.state = {
-			profile: []
-		}
-	}
+  constructor(props) {
+    super(props)
+    this.state = {
+      profile: []
+    }
+  }
+
 
 	componentDidMount() {
 		
@@ -45,6 +47,7 @@ class DetailProfile extends Component {
 			</div>
 		)
 	}
+
 }
 
 export default DetailProfile
