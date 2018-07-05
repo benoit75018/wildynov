@@ -4,9 +4,12 @@ DROP DATABASE IF EXISTS projectynov;
 -- Model: New Model    Version: 1.0
 -- MySQL Workbench Forward Engineering
 
-SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
-SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
-SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS
+, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS
+, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE
+, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 
 -- -----------------------------------------------------
 -- Schema projectynov
@@ -15,57 +18,86 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 -- -----------------------------------------------------
 -- Schema projectynov
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `projectynov` DEFAULT CHARACTER SET utf8 ;
-USE `projectynov` ;
+CREATE SCHEMA
+IF NOT EXISTS `projectynov` DEFAULT CHARACTER
+SET utf8 ;
+USE `projectynov`
+;
 
 -- -----------------------------------------------------
 -- Table `projectynov`.`profile`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `projectynov`.`profile` (
+CREATE TABLE
+IF NOT EXISTS `projectynov`.`profile`
+(
   `id` INT NOT NULL AUTO_INCREMENT,
-  `name` VARCHAR(250) NULL,
-  `first_name` VARCHAR(250) NULL,
-  `year` VARCHAR(250) NULL,
-  `campus` VARCHAR(250) NULL,
-  `password` VARCHAR(250) NULL,
-  `email` VARCHAR(250) NULL,
-  `skill` VARCHAR(250) NULL,
+  `name` VARCHAR
+(250) NULL,
+  `first_name` VARCHAR
+(250) NULL,
+  `year` VARCHAR
+(250) NULL,
+  `campus` VARCHAR
+(250) NULL,
+  `password` VARCHAR
+(250) NULL,
+  `email` VARCHAR
+(250) NULL,
+  `skill` VARCHAR
+(250) NULL,
   `created_at` DATETIME NULL,
   `updated_at` DATETIME NULL,
   `status` TINYINT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE INDEX `email_UNIQUE` (`email` ASC))
+  PRIMARY KEY
+(`id`),
+  UNIQUE INDEX `email_UNIQUE`
+(`email` ASC))
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
 -- Table `projectynov`.`project`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `projectynov`.`project` (
+CREATE TABLE
+IF NOT EXISTS `projectynov`.`project`
+(
   `id` INT NOT NULL AUTO_INCREMENT,
-  `title` VARCHAR(250) NULL,
+  `title` VARCHAR
+(250) NULL,
   `deadline_project` DATETIME NULL,
   `deadline_application` DATETIME NULL,
-  `description` VARCHAR(250) NULL,
+  `description` VARCHAR
+(250) NULL,
   `state` TINYINT NULL,
-  `created_at` TIMESTAMP(4) NULL,
-  `updated_at` TIMESTAMP(4) NULL,
-  PRIMARY KEY (`id`))
+  `created_at` TIMESTAMP
+(4) NULL,
+  `updated_at` TIMESTAMP
+(4) NULL,
+  PRIMARY KEY
+(`id`))
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
 -- Table `projectynov`.`project_has_profile`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `projectynov`.`project_has_profile` (
+CREATE TABLE
+IF NOT EXISTS `projectynov`.`project_has_profile`
+(
   `project_id` INT NOT NULL,
   `profile_id` INT NOT NULL,
-  PRIMARY KEY (`project_id`, `profile_id`),
-  INDEX `fk_project_has_profile_profile1_idx` (`profile_id` ASC),
-  INDEX `fk_project_has_profile_project_idx` (`project_id` ASC))
+  PRIMARY KEY
+(`project_id`, `profile_id`),
+  INDEX `fk_project_has_profile_profile1_idx`
+(`profile_id` ASC),
+  INDEX `fk_project_has_profile_project_idx`
+(`project_id` ASC))
 ENGINE = InnoDB;
 
 
-SET SQL_MODE=@OLD_SQL_MODE;
-SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
-SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+SET SQL_MODE
+=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS
+=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS
+=@OLD_UNIQUE_CHECKS;
