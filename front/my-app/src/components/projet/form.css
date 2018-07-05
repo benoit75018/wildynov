@@ -1,0 +1,42 @@
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
+
+}
+
+.row1 {
+  width: 50%;
+  margin: 5vw;
+}
+
+.row2 {
+  width: 30%;
+
+}
+
+.button {
+  padding-top: 10px;
+  width: 710px;
+
+}
+
+.input {
+  width: 250px;
+
+}
+
+.input1 {
+  width: 250px;
+
+}
+
+.title {}
+/* .information {
+  text-align: right;
+  float: right;
+  width: 6.25rem;
+  position: relative;
+  padding: 2000px;
+} */

@@ -11,7 +11,6 @@ import Menu from '@material-ui/core/Menu'
 import MenuItem from '@material-ui/core/MenuItem'
 import { Link } from '@reach/router'
 
-
 const styles = {
 	root: {
 		flexGrow: 1
@@ -53,8 +52,8 @@ class MenuAppBar extends React.Component {
 					<Toolbar>
 						<Typography variant="title" color="inherit" className={classes.flex} />
 
-						<Button color="inherit" href="/projet">
-							Projet
+						<Button color="inherit" href="/addprojet">
+							Proposez un projet
 						</Button>
 
 						{auth && (
@@ -65,7 +64,7 @@ class MenuAppBar extends React.Component {
 									onClick={this.handleMenu}
 									color="inherit"
 								>
-									<AccountCircle /> 
+									<AccountCircle />
 								</IconButton>
 
 								<Menu
