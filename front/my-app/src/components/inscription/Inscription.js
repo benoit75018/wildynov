@@ -1,13 +1,10 @@
 import React from 'react'
-
 // Menus déroulants
 import SelectCampus from '../profil/SelectCampus'
 import SelectPromo from '../profil/SelectPromo'
-
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
 import Button from '@material-ui/core/Button'
 import TextField from 'material-ui/TextField'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import NavBar from '../AppBar'
 
 const theme = createMuiTheme({
@@ -51,8 +48,8 @@ class Inscription extends React.Component {
 
 
 	<div>
-		<a href="#" linkButton={true} href="/home" class="brand-logo center">
-			{<img src="https://image.noelshack.com/fichiers/2018/24/3/1528883121-webp-net-resizeimage.png" />}
+		<a linkButton={true} href="/home" class="brand-logo center" alt="">
+			{<img src="https://image.noelshack.com/fichiers/2018/24/3/1528883121-webp-net-resizeimage.png" alt=""/>}
 		</a>
 		<NavBar />
 

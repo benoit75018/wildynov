@@ -78,7 +78,7 @@ class Projets extends Component {
 
 								return (
 									<Grid item xs={12} md={6} lg={3}>
-										<Block title={project.title} description={project.description} />
+										<Block {...project} />
 										{/* <div>{project.title}</div>
 										<div>{project.description}</div> */}
 									</Grid>

@@ -14,6 +14,7 @@ import SimpleTable_pro from "./SimpleTable_projects"
 import AppBarAdmin from "./AppBarAdmin"
 import Logo from "../logo/Logo"
 
+
 const drawerWidth = 240
 
 const styles = theme => ({

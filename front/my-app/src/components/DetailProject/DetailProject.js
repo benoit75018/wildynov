@@ -20,7 +20,7 @@ class DetailProject extends Component {
     super(props)
     // this.statresolve
     this.state = {
-      project: []
+      project: {}
     }
 
     // descriptiresolve
@@ -28,6 +28,7 @@ class DetailProject extends Component {
   }
 
   componentDidMount() {
+    console.log(this.props)
     axios
       .get(
         `http://localhost:8080/projets/showProjetDetails/${
@@ -35,8 +36,8 @@ class DetailProject extends Component {
         }`
       )
       .then(response => {
-        console.log("--response--", response.data.results)
-        this.setState({ project: response.data.results })
+        console.log("--response--", response.data )
+        this.setState({ project: response.data })
         console.log("this.state.project ", this.state.project)
       })
       .catch(err => {
@@ -46,8 +47,9 @@ class DetailProject extends Component {
       })
   }
 
+  //const infoProject = this.state.project.map(e => e.title)
   render() {
-    const infoProject = this.state.project.map(e => e.title)
+    console.log('state', this.state)
     return (
       <div>
         <Logo />
@@ -55,7 +57,7 @@ class DetailProject extends Component {
         <div>
           <Typography variant="title" gutterBottom>
             <br />
-            <h5>{infoProject}</h5>
+            <span>{this.infoProject}</span>
           </Typography>
           <div className="test">
             <Grid container>
@@ -63,13 +65,13 @@ class DetailProject extends Component {
                 <Membres results={this.state.project} />
               </Grid>
               <Grid item xs={6}>
-                <EditionProject results={this.state.project} />
+                <EditionProject project={this.state.project} />
               </Grid>
             </Grid>
 
             <Grid container>
               <Grid item xs={12} md={12}>
-                <SimpleCard />
+                <SimpleCard project={this.state.project} />
               </Grid>
             </Grid>
             <div>

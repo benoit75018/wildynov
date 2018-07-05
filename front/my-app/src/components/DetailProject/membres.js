@@ -2,13 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import TextField from '@material-ui/core/TextField';
-import Input from '@material-ui/core/Input';
-import withTheme from '@material-ui/core/styles/withTheme';
+
 
 //import AccountCircle from '@material-ui/icons/AccountCircle';
 
@@ -42,7 +38,7 @@ card:{
 
 function Membres(props) {
   const { classes } = props;
-  const bull = <span className={classes.bullet}>•</span>;
+  //const bull = <span className={classes.bullet}>•</span>;
   console.log(classes.card)
   // console.log(props);
   

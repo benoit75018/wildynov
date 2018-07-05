@@ -23,28 +23,28 @@ class App extends Component {
     this.state = {}
   }
 
-  render() {
-    return (
-      /*CALL ROUTES*/
-      <div className="App">
-        <Router>
-          <DetailProject path="/detailproject" />
-          <Login path="/" />
-          <Signup path="/signup" />
-          <Home exact path="/home" />
-          <Projets path="/home" />
-          {/* <Inscription path="/registration" /> */}
-          <Profil path="/profil" />
-          <Editprofil path="/editprofil" />
-          <LoginAdmin path="/login/admin" />
-          <ClippedDrawer path="/admin/home" />
-          <SimpleTable path="/admin/projet" />
-          <Projetformulaire path="/addprojet" />
-          <DetailProject path="/detailproject/:projectId" />
-        </Router>
-      </div>
-    )
-  }
+
+	render() {
+		return (
+			/*CALL ROUTES*/
+			<div className="App">
+				<Router>
+					<Login path="/" />
+					<Signup path="/signup" />
+					<Home exact path="/home" />
+					<Projets path="/home" />
+					<Inscription path="/registration" />
+					<Profil path="/profil" />
+					<Editprofil path="/editprofil" />
+					<LoginAdmin path="/login/admin" />
+					<ClippedDrawer path="/admin/home" />
+					<SimpleTable path="/admin/projet" />
+					<Projetformulaire path="/addprojet" />
+					<DetailProject path="/detailproject/:projectId" />
+				</Router>
+			</div>
+		)
+	}
 }
 
 export default App
