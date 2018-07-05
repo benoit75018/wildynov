@@ -1,7 +1,5 @@
 import React from 'react'
-import SelectsCampus from './SelectCampus'
-import SelectsPromo from './SelectPromo'
-import SelectSkills from './SelectSkills'
+
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
 import './Profils.css'
 import Button from '@material-ui/core/Button'
@@ -17,7 +15,6 @@ import FormControl from '@material-ui/core/FormControl'
 import NativeSelect from '@material-ui/core/NativeSelect'
 import Input from '@material-ui/core/Input'
 
-import { FormControlLabel } from '@material-ui/core'
 import { navigate } from '@reach/router'
 
 const theme = createMuiTheme({
@@ -119,8 +116,16 @@ class Editprofil extends React.Component {
 							</NativeSelect>
 						</FormControl>
 						<br />
-						<FormControl className="formControl">
+						<TextField
+							hintText="Compétences"
+							onChange={this.handleChange}
+							floatingLabelText="Compétences"
+							name="skill"
+						/>
+						<br />
+						{/* <FormControl className="formControl">
 							<InputLabel htmlFor="skills-native-helper">Skills</InputLabel>
+
 							<NativeSelect
 								onChange={this.handleChange}
 								name="skill"
@@ -134,7 +139,7 @@ class Editprofil extends React.Component {
 								<option value="Ux Designers">Ux Designers</option>
 								<option value="Front-end">Front-end</option>
 							</NativeSelect>
-						</FormControl>
+						</FormControl> */}
 						<br />
 						<div className="buttonprofile">
 							<Button
