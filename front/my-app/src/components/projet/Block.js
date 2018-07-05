@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 // Importations de Material-ui
-import { MuiThemeProvider, createMuiTheme, withStyles } from '@material-ui/core/styles'
+import { withStyles } from '@material-ui/core/styles'
 // Le component API "Typography" (traite le texte: police, taille...)
 import Typography from '@material-ui/core/Typography'
 // Le component "Card" et ses dérivés (forme des encadrés)

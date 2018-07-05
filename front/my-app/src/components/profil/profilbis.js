@@ -1,20 +1,6 @@
 import React, { Component } from 'react'
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-
 // import TextField from 'material-ui/TextField';
-import TextField from '@material-ui/core/TextField'
-import Card from '@material-ui/core/Card'
-
-import Grid from '@material-ui/core/Grid'
-import GridList from '@material-ui/core/GridList'
-import GridListTile from '@material-ui/core/GridListTile'
-import GridListTileBar from '@material-ui/core/GridListTileBar'
-import IconButton from '@material-ui/core/IconButton'
 import Typography from '@material-ui/core/Typography'
-import FormLabel from '@material-ui/core/FormLabel'
-import FormControlLabel from '@material-ui/core/FormControlLabel'
-
-import Paper from '@material-ui/core/Paper'
 import NavBar from '../AppBar'
 import Logo from '../logo/Logo'
 import axios from 'axios'
@@ -28,7 +14,7 @@ class DetailProfile extends Component {
 	}
 
 	componentDidMount() {
-		console.log('nique ta mere')
+		
 		axios
 			.get('http://localhost:8080/user/profile')
 			.then((response) => {

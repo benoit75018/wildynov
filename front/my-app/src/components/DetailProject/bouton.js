@@ -32,5 +32,5 @@ function ButtonSizes(props) {
 ButtonSizes.propTypes = {
     classes: PropTypes.object.isRequired
   };
-  
+
   export default withStyles(styles)(ButtonSizes);

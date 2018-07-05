@@ -28,7 +28,6 @@ class App extends Component {
 			/*CALL ROUTES*/
 			<div className="App">
 				<Router>
-					<DetailProject path="/detailproject" />
 					<Login path="/" />
 					<Signup path="/signup" />
 					<Home exact path="/home" />

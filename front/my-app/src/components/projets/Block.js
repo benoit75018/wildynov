@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 // Importations de Material-ui
-import { MuiThemeProvider, createMuiTheme, withStyles } from '@material-ui/core/styles'
+import { withStyles } from '@material-ui/core/styles'
 // Le component API "Typography" (traite le texte: police, taille...)
 import Typography from '@material-ui/core/Typography'
 // Le component "Card" et ses dérivés (forme des encadrés)
@@ -26,7 +26,7 @@ class Block extends Component {
 	}
 
 	render() {
-		const { card, title, description, button } = this.props
+		const { card, title, description, button, id } = this.props
 		return (
 			<div>
 				<Card className={card}>
@@ -45,7 +45,7 @@ class Block extends Component {
 							Voir +
 						</Button>
 					</Link> */}
-						<Link to="/detailproject/:projectId">
+						<Link to={`/detailproject/${id}`}>
 							<Button variant="contained" size="small" className={button}>
 								Voir +
 							</Button>
