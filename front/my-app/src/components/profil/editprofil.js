@@ -45,9 +45,7 @@ class Editprofil extends React.Component {
 						<br />
 						<SelectSkills />
 						<br />
-						<Button variant="raised" color="primary" style={style}>
-							Modifier
-						</Button>
+
 						<Button variant="raised" color="primary" style={style}>
 							Enregistrer
 						</Button>

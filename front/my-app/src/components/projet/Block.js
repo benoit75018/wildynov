@@ -12,7 +12,6 @@ import CardContent from '@material-ui/core/CardContent'
 import Button from '@material-ui/core/Button'
 // Le component "Divider" (équivalent au <hr />)
 import Divider from '@material-ui/core/Divider'
-import { Link } from '@reach/router'
 import './block.css'
 
 class Block extends Component {
@@ -26,7 +25,7 @@ class Block extends Component {
 	}
 
 	render() {
-		const { card, title, description, button, id } = this.props
+		const { card, title, description, button } = this.props
 		return (
 			<div>
 				<Card className={card}>
@@ -45,11 +44,9 @@ class Block extends Component {
 							Voir +
 						</Button>
 					</Link> */}
-						<Link to={`/detailproject/${id}`}>
-							<Button variant="contained" size="small" className={button}>
-								Voir +
-							</Button>
-						</Link>
+						<Button variant="contained" size="small" className={button} to="./detailproject/:projectId">
+							Voir +
+						</Button>
 					</CardActions>
 				</Card>
 				<br />

@@ -4,10 +4,7 @@ import { withStyles } from '@material-ui/core/styles'
 import Drawer from '@material-ui/core/Drawer'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
-import List from '@material-ui/core/List'
 import Typography from '@material-ui/core/Typography'
-import Divider from '@material-ui/core/Divider'
-import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
 import Button from '@material-ui/core/Button'
 
 const drawerWidth = 240

@@ -2,7 +2,7 @@ import React from 'react'
 import NavBar from './components/AppBar'
 import Projets from './components/projets/Projets'
 import Logo from './components/logo/Logo'
-import Block from './components/projets/Block'
+
 /*HE HOME PAGE FOR STUDENTS*/
 class Home extends React.Component {
 	constructor(props) {
@@ -14,10 +14,8 @@ class Home extends React.Component {
 		return (
 			<div>
 				<Logo />
-
 				<NavBar />
 				<Projets />
-				
 			</div>
 		)
 	}

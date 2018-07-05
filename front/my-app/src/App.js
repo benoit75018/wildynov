@@ -5,7 +5,6 @@ import { Router } from '@reach/router'
 import Home from './Home'
 import Login from './components/login/Login'
 import Signup from './components/login/FirstConnexion'
-import Projet from './components/projet/Projet'
 import Projets from './components/projets/Projets'
 import Profil from './components/profil/Profil'
 import Editprofil from './components/profil/editprofil'
@@ -15,7 +14,6 @@ import SimpleTable from './components/adminAllprojects/SimpleTable'
 import Inscription from './components/inscription/Inscription'
 import DetailProject from './components/DetailProject/DetailProject'
 import Projetformulaire from './components/projet/formulaire.js'
-
 // Feuilles de style //
 import './App.css'
 
@@ -30,21 +28,19 @@ class App extends Component {
 			/*CALL ROUTES*/
 			<div className="App">
 				<Router>
-					<DetailProject path="/detailproject" />
 					<Login path="/" />
 					<Signup path="/signup" />
 					<Home exact path="/home" />
 					<Projets path="/home" />
-					<Projet path="/projet" />
 					<Inscription path="/registration" />
 					<Profil path="/profil" />
 					<Editprofil path="/editprofil" />
 					<LoginAdmin path="/login/admin" />
 					<ClippedDrawer path="/admin/home" />
 					<SimpleTable path="/admin/projet" />
-					<Projetformulaire path="/formulaire"/>
+					<Projetformulaire path="/addprojet" />
+					<DetailProject path="/detailproject/:projectId" />
 				</Router>
-				
 			</div>
 		)
 	}
