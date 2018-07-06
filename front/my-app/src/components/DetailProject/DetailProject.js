@@ -20,7 +20,9 @@ class DetailProject extends Component {
     super(props)
     // this.statresolve
     this.state = {
-      project: {}
+      project: {},
+      dateSlice: '',
+      dateSlice2: ''
     }
 
     // descriptiresolve
@@ -40,13 +42,24 @@ class DetailProject extends Component {
         this.setState({ project: response.data })
         console.log("this.state.project ", this.state.project)
       })
+      .then(res => {
+        
+        const date= this.state.project.deadline_application.slice(0, 10)
+        this.setState({ dateSlice: date})
+        
+      })
+      .then(res => {
+        
+        const date2= this.state.project. deadline_project.slice(0, 10)
+        this.setState({ dateSlice2: date2})
+        
+      })
       .catch(err => {
         {
           console.log(" caught it!", err)
         }
       })
   }
-
   //const infoProject = this.state.project.map(e => e.title)
   render() {
     console.log('state', this.state)
@@ -65,7 +78,9 @@ class DetailProject extends Component {
                 <Membres results={this.state.project} />
               </Grid>
               <Grid item xs={6}>
-                <EditionProject project={this.state.project} />
+                <EditionProject   state={this.state.project} project={this.state.dateSlice} project2={this.state.dateSlice2} />
+                
+
               </Grid>
             </Grid>
 

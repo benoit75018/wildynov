@@ -39,6 +39,19 @@ const styles = theme => ({
 });
 
 class EditionProject extends React.Component {
+  state = {
+    date: '',
+    date2: ''
+  }
+
+dateSliced = () => {
+  return
+  this.state.date  
+} 
+dateSliced2 = () => {
+  return
+  this.state.date2  
+} 
 render() {
 
   return (
@@ -50,16 +63,12 @@ render() {
       </Typography>
 
           <Typography className={this.props.classes.pos} color="textSecondary">
-
           </Typography>
           <br/>
-
-          <p>Nom de l'auteur du projet: {this.props.project.profile_id}</p>
-          <p>Date de création: {this.props.project.created_at}</p>
-          <p>Date de l'édition: {this.props.project.deadline_project}</p>
-          <p>Date de vadilité: {this.props.project.deadline_application}</p>
-
-
+          <p>Nom de l'auteur du projet: {this.props.state.profile_id}</p>
+          <p>Date de création: {this.props.state.created_at}</p>
+          <p>Date de l'édition : {this.props.project}</p>
+          <p>Date de vadilité: {this.props.project2}</p>
         </CardContent>
 
       </Card>
