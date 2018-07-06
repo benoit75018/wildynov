@@ -1,40 +1,44 @@
-import React from 'react'
-import { withStyles } from '@material-ui/core/styles'
-import Card from '@material-ui/core/Card'
-import CardContent from '@material-ui/core/CardContent'
-import Typography from '@material-ui/core/Typography'
+import React from 'react';
+import { withStyles } from '@material-ui/core/styles';
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import Typography from '@material-ui/core/Typography';
+import axios from 'axios'
 
 //import AccountCircle from '@material-ui/icons/AccountCircle';
 
-const styles = (theme) => ({
-	card: {
-		height: 350
-	},
-	bullet: {
-		display: 'inline-block',
-		margin: '0 2px',
-		transform: 'scale(0.8)'
-	},
-	title: {
-		marginBottom: 16,
-		fontSize: 14
-	},
-	pos: {
-		marginBottom: 12
-	},
-	imput: {
-		marginLeft: theme.spacing.unit,
-		width: 100,
-		margin: 15
-	},
-	container: {
-		display: 'flex',
-		flexWrap: 'wrap'
-	}
-})
+
+
+
+const styles = theme => ({
+  card:{
+    height:350,
+
+  },
+  bullet: {
+    display: 'inline-block',
+    margin: '0 2px',
+    transform: 'scale(0.8)',
+  },
+  title: {
+    marginBottom: 16,
+    fontSize: 14
+  },
+  pos: {
+    marginBottom: 12
+  },
+  imput: {
+    marginLeft: theme.spacing.unit,
+    width: 100,
+    margin: 15
+  },
+  container: {
+  display: 'flex',
+  flexWrap: 'wrap',
+  }
+});
 
 class EditionProject extends React.Component {
-<<<<<<< HEAD
   state = {
     date: '',
     date2: ''
@@ -71,7 +75,10 @@ render() {
     </div>
 
   );
-
+}
 }
 
-export default withStyles(styles)(EditionProject)
+
+export default withStyles(styles)(EditionProject);
+
+
