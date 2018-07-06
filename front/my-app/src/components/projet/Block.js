@@ -49,7 +49,9 @@ class Block extends Component {
 						</Button>
 					</CardActions>
 				</Card>
+
 				<br />
+				
 			</div>
 		)
 	}
