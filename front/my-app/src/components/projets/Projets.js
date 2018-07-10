@@ -2,13 +2,15 @@ import React, { Component } from 'react'
 
 // Material-UI //
 import { MuiThemeProvider, createMuiTheme, withStyles } from '@material-ui/core/styles'
-
+import Button from '@material-ui/core/Button'
+import TextField from '@material-ui/core/TextField'
 import Grid from '@material-ui/core/Grid'
 import PropTypes from 'prop-types'
 import axios from 'axios'
 
 // Importations locales //
-import Block from '../projets/Block'
+import Block from './Block'
+import './projets.css'
 
 const theme = createMuiTheme({
 	palette: {
@@ -26,18 +28,13 @@ class Projets extends Component {
 		super(props)
 
 		this.state = {
-			filtre: [],
 			projects: []
 		}
 	}
 
 	componentDidMount() {
 		axios
-			.get('http://localhost:8080/projets/showProjet', {
-				headers: {
-					'x-access-token': localStorage.getItem('token')
-				}
-			})
+			.get('http://localhost:8080/projets/showProjet')
 			.then((response) => {
 				console.log('--response--', response.data.results)
 				this.setState({ projects: response.data.results })
@@ -48,28 +45,44 @@ class Projets extends Component {
 			})
 	}
 
-	handleSubmit = (event) => {
-		event.preventDefault()
+	// Fonction pour trier par ordre ascendant
+	sortByProjectAsc = () => {
+		let sorted = this.state.projects.sort((a, b) => (a.title > b.title ? 1 : -1))
+		this.setState({ projects: sorted })
 	}
 
-	updateFilter = (event) => {
-		this.setState({ filter: event.target.value })
+	// Fonction pour trier par ordre descendant
+	sortByProjectDesc = () => {
+		let sorted = this.state.projects.sort((a, b) => (a.title < b.title ? 1 : -1))
+		this.setState({ projects: sorted })
 	}
 
 	render() {
+		console.log('this.state.projects: ', this.state.projects)
 		const { classes } = this.props
-
-		// Projets.map( (i) => {
-		// return (
-		//   < Block
-		//   title={Projets[i].title} description={Projets[i].description}
-		//   />
 		return (
 			<div className="size1">
 				<div className={classes.root}>
 					<MuiThemeProvider theme={theme}>
-						{/*fonction onChange pour récupérer la valeur entrée dans le Textfield */}
-
+						{/* Bouton: filtrer les projets par ordre ascendant */}
+						<Button
+							size="small"
+							variant="raised"
+							color="primary"
+							className={classes.button1}
+							onClick={this.sortByProjectAsc}
+						>
+							A - Z
+						</Button>
+						<Button
+							size="small"
+							variant="raised"
+							color="primary"
+							className={classes.button1}
+							onClick={this.sortByProjectDesc}
+						>
+							Z - A
+						</Button>
 						<br />
 						<br />
 						<br />
@@ -82,9 +95,7 @@ class Projets extends Component {
 
 								return (
 									<Grid item xs={12} md={6} lg={3}>
-										<Block {...project} />
-										{/* <div>{project.title}</div>
-										<div>{project.description}</div> */}
+										<Block title={project.title} description={project.description} />
 									</Grid>
 								)
 							})}
