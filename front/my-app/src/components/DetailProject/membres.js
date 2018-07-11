@@ -2,13 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import TextField from '@material-ui/core/TextField';
-import Input from '@material-ui/core/Input';
-import withTheme from '@material-ui/core/styles/withTheme';
+
 
 //import AccountCircle from '@material-ui/icons/AccountCircle';
 
@@ -38,11 +34,14 @@ card:{
   }
 });
 
+
+
 function Membres(props) {
   const { classes } = props;
-  const bull = <span className={classes.bullet}>•</span>;
+  //const bull = <span className={classes.bullet}>•</span>;
   console.log(classes.card)
-
+  // console.log(props);
+  
   return (
     <div className="membres">
       <Card className={classes.card}>
@@ -52,75 +51,15 @@ function Membres(props) {
             </Typography> 
                 <Typography className={classes.pos} color="textSecondary">  
             </Typography>
-                <Input variant="mo"
-                placeholder="NOM"
-                className={classes.input}
-                inputProps={{
-                'aria-label': 'Description',
-                }}
-            />
-            <Input
-                placeholder="Prénom"
-                className={classes.input}
-                inputProps={{
-                'aria-label': 'Description',
-                }}
-            />
-                            <Input variant="mo"
-                placeholder="NOM"
-                className={classes.input}
-                inputProps={{
-                'aria-label': 'Description',
-                }}
-            />
-            <Input
-                placeholder="Prénom"
-                className={classes.input}
-                inputProps={{
-                'aria-label': 'Description',
-                }}
-            />                  <Input variant="mo"
-            placeholder="NOM"
-            className={classes.input}
-            inputProps={{
-            'aria-label': 'Description',
-            }}
-        />
-        <Input
-            placeholder="Prénom"
-            className={classes.input}
-            inputProps={{
-            'aria-label': 'Description',
-            }}
-        />
-                        <Input variant="mo"
-                placeholder="NOM"
-                className={classes.input}
-                inputProps={{
-                'aria-label': 'Description',
-                }}
-            />
-            <Input
-                placeholder="Prénom"
-                className={classes.input}
-                inputProps={{
-                'aria-label': 'Description',
-                }}
-            />
-                            <Input variant="mo"
-                placeholder="NOM"
-                className={classes.input}
-                inputProps={{
-                'aria-label': 'Description',
-                }}
-            />
-            <Input
-                placeholder="Prénom"
-                className={classes.input}
-                inputProps={{
-                'aria-label': 'Description',
-                }}
-            />          
+            <br/>
+            <p className="NOM">Nom: {}</p>
+            <p className="Prenom"> Prénom: {}</p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+
+
         </CardContent>
       </Card>
     </div>

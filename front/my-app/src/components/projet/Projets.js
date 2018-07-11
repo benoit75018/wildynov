@@ -8,8 +8,8 @@ import PropTypes from 'prop-types'
 import axios from 'axios'
 
 // Importations locales //
-import Block from '../projets/Block'
-
+import Block from './Block'
+import RecipeReviewCard from './blockpro'
 const theme = createMuiTheme({
 	palette: {
 		primary: {
@@ -33,11 +33,7 @@ class Projets extends Component {
 
 	componentDidMount() {
 		axios
-			.get('http://localhost:8080/projets/showProjet', {
-				headers: {
-					'x-access-token': localStorage.getItem('token')
-				}
-			})
+			.get('http://localhost:8080/projets/showProjet')
 			.then((response) => {
 				console.log('--response--', response.data.results)
 				this.setState({ projects: response.data.results })
@@ -59,11 +55,7 @@ class Projets extends Component {
 	render() {
 		const { classes } = this.props
 
-		// Projets.map( (i) => {
-		// return (
-		//   < Block
-		//   title={Projets[i].title} description={Projets[i].description}
-		//   />
+		
 		return (
 			<div className="size1">
 				<div className={classes.root}>
@@ -76,15 +68,13 @@ class Projets extends Component {
 						<Grid container>
 							{// NB: pour moi, "Projects" signifie tous les projets. L'argument "project" représente chacun des projets (chaque projet, individuellement); tandis que "i" représente chaque propriété/clef à l'intérieur de chaque projet...
 							this.state.projects.map((project) => {
-								{
-									console.log('it works!')
-								}
-
+								
 								return (
 									<Grid item xs={12} md={6} lg={3}>
 										<Block {...project} />
 										{/* <div>{project.title}</div>
 										<div>{project.description}</div> */}
+										<RecipeReviewCard />
 									</Grid>
 								)
 							})}

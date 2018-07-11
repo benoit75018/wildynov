@@ -4,10 +4,6 @@ export default StyleSheet.create({
   'div': {
     'textAlign': 'center'
   },
-  'nav': {
-    'padding': [{ 'unit': 'px', 'value': 60 }, { 'unit': 'px', 'value': 60 }, { 'unit': 'px', 'value': 60 }, { 'unit': 'px', 'value': 60 }],
-    'border': [{ 'unit': 'string', 'value': 'none' }]
-  },
   'nav-wrapper': {
     'padding': [{ 'unit': 'px', 'value': 0 }, { 'unit': 'px', 'value': 0 }, { 'unit': 'px', 'value': 0 }, { 'unit': 'px', 'value': 0 }]
   },
@@ -36,6 +32,12 @@ export default StyleSheet.create({
   },
   'App-title': {
     'fontSize': [{ 'unit': 'em', 'value': 1.5 }]
+  },
+  'formControl': {
+    'width': [{ 'unit': 'px', 'value': 260 }]
+  },
+  'buttonprofile': {
+    'padding': [{ 'unit': 'px', 'value': 30 }, { 'unit': 'px', 'value': 30 }, { 'unit': 'px', 'value': 30 }, { 'unit': 'px', 'value': 30 }]
   },
   'App-intro': {
     'fontSize': [{ 'unit': 'string', 'value': 'large' }]

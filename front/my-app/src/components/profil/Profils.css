@@ -2,11 +2,6 @@ div {
   text-align: center;
 }
 
-nav {
-  padding: 60px;
-  border: none;
-}
-
 .nav-wrapper {
   padding: 0;
 }
@@ -42,6 +37,14 @@ dMuiThemeProvide {
 
 .App-title {
   font-size: 1.5em;
+}
+
+.formControl {
+  width: 260px;
+}
+
+.buttonprofile {
+  padding: 30px;
 }
 
 .App-intro {
