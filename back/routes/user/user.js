@@ -7,10 +7,12 @@ const verifToken = require('../../middleware/verifToken.js')
 
 //// Route du profil ////
 
-router.get('/profile', verifToken, (req, res) => {
-	const user = req.token.email
+router.get('/profile', (req, res) => {
+	// const user = req.token.email
+	console.log( ' je suis la ' )
+	const user = 'rameaubenoit@hotmail.fr'
 
-	connection.query('SELECT * FROM profile WHERE email = ?', [ user ], function(selectError, results, fields) {
+	connection.query('SELECT * FROM profile WHERE email = ?',[ user], (selectError, results, fields) => {
 		if (selectError) {
 			res.send({
 				code: 400,
@@ -18,7 +20,7 @@ router.get('/profile', verifToken, (req, res) => {
 			})
 		} else results
 		// lodash _.pick (npm for select some to data to inject in the front )
-    res.status(200).json(_.pick(results[0], [ 'name', 'first_name', 'campus', 'year', 'skill' ]))
+    return res.status(200).json(_.pick(results[0], [ 'name', 'first_name', 'campus', 'year', 'skill' ]))
 	})
 })
 
