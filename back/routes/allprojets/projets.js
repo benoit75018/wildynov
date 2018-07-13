@@ -75,10 +75,7 @@ router.post("/ProjetJoin/:projectId", verifToken, (req, res, next) => {
     if (result.length && result[0]["COUNT(*)"] >= 5) {
       return res.json({ error: "full project" })
     } else {
-      connection.query(
-        INSERT_ID,
-        [req.params.projectId, member],
-        (err, result) => {
+      connection.query(INSERT_ID, [req.params.projectId, member],(err, result) => {
           if (err) {
             next(err)
           } else {
@@ -89,5 +86,35 @@ router.post("/ProjetJoin/:projectId", verifToken, (req, res, next) => {
     }
   })
 })
+
+
+//////////////Routes pour afficher les membres d'un projets////////////
+router.get("/membrestoproject/", (req, res) => {
+
+  const SELECT_QUERY = `
+  SELECT profile_id 
+  FROM project_has_profile 
+  WHERE project_id=2
+  `
+  const SELECT_QUERY_MEMBRES =`
+  SELECT name, first_name
+  FROM profile
+  WHERE id = profile_id
+  `
+
+  connection.query(SELECT_QUERY_MEMBRES, (err, results) => {
+   
+    if (err) {
+      return res.send(err)
+    } else {
+      return res.send({
+        results
+      })
+    }
+  })
+})
+
+
+
 
 module.exports = router

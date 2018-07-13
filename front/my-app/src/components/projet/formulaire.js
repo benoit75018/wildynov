@@ -15,11 +15,9 @@ class Projetformulaire extends React.Component {
 		super(props)
 		this.state = {
 			title: '',
-
 			deadline_project: '',
 			deadline_application: '',
 			description: '',
-
 			displaySnack: false,
 			snack: { variant: 'warning', message: '' }
 		}

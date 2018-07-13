@@ -3,11 +3,6 @@ import { withStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
-import axios from 'axios'
-
-//import AccountCircle from '@material-ui/icons/AccountCircle';
-
-
 
 
 const styles = theme => ({
@@ -58,27 +53,23 @@ render() {
     <div className="EditionProject">
       <Card className={this.props.classes.card}>
         <CardContent>
-        <Typography variant="title" gutterBottom>
-        Edition du project
-      </Typography>
-
+          <Typography variant="title" gutterBottom>
+             Edition du project
+          </Typography>
           <Typography className={this.props.classes.pos} color="textSecondary">
           </Typography>
           <br/>
-          <p>Nom de l'auteur du projet: {this.props.state.profile_id}</p>
-          <p>Date de création: {this.props.state.created_at}</p>
+          <p>Nom de l'auteur du projet: {this.props.state.title}</p>
+          <p>Date de création: {this.props.project3}</p>
           <p>Date de l'édition : {this.props.project}</p>
           <p>Date de vadilité: {this.props.project2}</p>
         </CardContent>
-
       </Card>
     </div>
 
   );
 }
 }
-
-
 export default withStyles(styles)(EditionProject);
 
 

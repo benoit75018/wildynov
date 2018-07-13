@@ -55,7 +55,7 @@ class Signup extends React.Component {
 				if (err.message) {
 					const snack = {
 						variant: 'warning',
-						message: 'Email déjà enregistrer!'
+						message: 'Email déjà enregistré!'
 					}
 
 					return (
@@ -103,7 +103,7 @@ class Signup extends React.Component {
 					<RaisedButton type="submit" label="Connexion" primary={true} style={style} />
 				</form>
 				<Link to="../">
-					<p>Vous avez déja un compte ? </p>
+					<p>Vous avez déjà un compte ? </p>
 				</Link>
 			</div>
 		)

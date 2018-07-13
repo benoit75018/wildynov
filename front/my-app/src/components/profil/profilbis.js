@@ -1,14 +1,6 @@
 import React, { Component } from 'react'
-<<<<<<< HEAD
-
-// import TextField from 'material-ui/TextField';
-
-import Typography from '@material-ui/core/Typography'
-
-=======
 // import TextField from 'material-ui/TextField';
 import Typography from '@material-ui/core/Typography'
->>>>>>> 5c93ebed11db8ac363477d1acb97569c9acf6d4c
 import NavBar from '../AppBar'
 import Logo from '../logo/Logo'
 import axios from 'axios'
